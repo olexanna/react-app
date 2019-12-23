@@ -1,4 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Page from "./components/page";
 
-ReactDOM.render( <h1>Hello World!!!</h1>, document.getElementById( "root" ) );
+
+
+
+ReactDOM.render( <Page name={"Alex"}/>, document.getElementById( "root" ) );
