@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Page from "./components/page";
+import "../assets/styles/reset.scss";
+import "../assets/styles/main.scss"
+import App from "./components/app"
 
 
 
 
-ReactDOM.render( <Page name={"Alex"}/>, document.getElementById( "root" ) );
+ReactDOM.render( <App name={"Alex"}/>, document.body );

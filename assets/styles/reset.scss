@@ -1,0 +1,25 @@
+
+@font-face {
+	font-family: 'candara';
+	//src: url( './fonts/CandaraReg.TTF');
+	font-weight: normal;
+}
+
+html, body {
+	height: 100%;
+	width:100%;
+}
+
+body{
+	overflow: hidden;
+	font-weight: inherit;
+}
+
+
+* {
+	border-spacing: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+

@@ -1,0 +1,41 @@
+.header{
+	width: 100%;
+	height:119px;
+	position: relative;
+	background: #0e0603;
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.logo-header{
+	width: 241px;
+	height: 77px;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-image: url("/assets/images/header/lab-logo-1.png");
+	box-sizing: border-box;
+	margin-left: 250px;
+}
+
+.header > .menu{
+	width: 40%;
+}
+
+.header > .menu > span{
+	color: white;
+	padding-right: 80px;
+	font-size: 20px;
+}
+
+.header > .name-company{
+	width: 226px;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-image: url("/assets/images/header/lab-2.png");
+	box-sizing: border-box;
+	margin-right: 250px;
+	background-size: contain;
+}
+
