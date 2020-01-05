@@ -16,6 +16,7 @@ export default class Header extends React.Component{
 							<span>Home</span>
 							<span>About</span>
 							<span>Menu</span>
+							<span>Stocks</span>
 							<span>News</span>
 							<span>Gallery</span>
 							<span>Contacts</span>

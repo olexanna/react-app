@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./header";
+import Rotate from "./rotate";
 import Footer from "./footer";
 import "../../assets/styles/app.scss";
 
@@ -12,10 +13,11 @@ export default class App extends React.Component{
 
 	render(){
 		return(
-					<div className={"app"}>
+			<React.Fragment>
 						<Header name={this.props.name}></Header>
-						<Footer>55</Footer>
-					</div>
+						<Rotate></Rotate>
+						<Footer></Footer>
+			</React.Fragment>
 		)
 	}
 }

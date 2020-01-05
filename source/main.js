@@ -7,4 +7,4 @@ import App from "./components/app"
 
 
 
-ReactDOM.render( <App name={"Alex"}/>, document.body );
+ReactDOM.render( <App name={"Alex"}/>, document.getElementById( "main" ) );
