@@ -11,7 +11,6 @@ export default class Footer extends React.Component{
 	}
 
 	render(){
-
 		let menuItems = [
 			"Offers and promotions",
 			"Contacts",
@@ -19,7 +18,7 @@ export default class Footer extends React.Component{
 			"Map of site",
 			"Vacancies",
 			"Sponsors"
-		].map( (value) =>
+		].map(  (value) =>
 			<MenuItem key={ value } name={ value }></MenuItem>
 		);
 
@@ -32,7 +31,7 @@ export default class Footer extends React.Component{
 			{ name: "", icon: "" },
 			{ name: "", icon: "" },
 			{ name: "", icon: "" }
-		].map( (value) =>
+		].map(  (value) =>
 			<SocialItem key={ value.icon } name={ value.name } icon={ value.icon }></SocialItem>
 		);
 

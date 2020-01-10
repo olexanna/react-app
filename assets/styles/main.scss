@@ -13,8 +13,13 @@
 }
 
 .jc-center{
-	justify-content: space-between;
+	 justify-content: space-between;
+ }
+
+.jc-end{
+	justify-content: flex-end;
 }
+
 
 .jc-start{
 	justify-content: flex-start;
@@ -22,6 +27,10 @@
 
 .jc-end{
 	justify-content: flex-end;
+}
+
+.fd-column{
+	flex-direction: column;
 }
 
 .ai-center{

@@ -7,4 +7,41 @@
 	z-index: 0;
 	position: relative;
 	top: -11px;
+
+	& > .slogan-block{
+			width: 56%;
+			height: 13%;
+			margin-top: 100px;
+			position: relative;
+
+			& > .slogan-block-blur{
+				background: #8686866b;
+				filter: blur(67px);
+				width: 88%;
+				height: 13%;
+				padding: 100px 43px 0px 0px;
+			}
+
+			& > .slogan-shell{
+					color: white;
+					font-size: 40px;
+					letter-spacing: 3px;
+					position: absolute;
+					top: 1px;
+
+					& > span{
+						display: block;
+					}
+
+					& > .slogan-text{
+
+					}
+
+					& > .slogan-subtext{
+
+					}
+			}
+
+	}
+
 }
