@@ -1,0 +1,32 @@
+.social-poster{
+	position: relative;
+	width: 100%;
+	background: #140a07;
+	padding: 37px 0px 35px 0px;
+
+	& > .poster-block{
+			width: 40%;
+			margin: 0 auto;
+
+			.poster-shell{
+				color: white;
+
+				& >.poster-title{
+						padding: 6px 0px 0px 0px;
+						font-size: 22px;
+						letter-spacing: 2px;
+				}
+
+				& > .poster-item img{
+						width: 150px;
+						height: 150px;
+						background: white;
+						border-radius: 110px;
+						border: 2px solid white;
+				}
+
+			}
+
+	}
+
+}
