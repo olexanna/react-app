@@ -3,8 +3,8 @@ import "../../assets/styles/social-poster.scss"
 
 export default class PosterItem extends React.Component{
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

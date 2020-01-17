@@ -6,8 +6,8 @@ import SocialItem from "./social.item";
 
 export default class Footer extends React.Component{
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){
@@ -23,14 +23,14 @@ export default class Footer extends React.Component{
 		);
 
 		let socialItems =  [
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" },
-			{ name: "", icon: "" }
+			{ name: "", icon: "1.png" },
+			{ name: "", icon: "2.png" },
+			{ name: "", icon: "3.png" },
+			{ name: "", icon: "4.png" },
+			{ name: "", icon: "5.png" },
+			{ name: "", icon: "6.png" },
+			{ name: "", icon: "7.png" },
+			{ name: "", icon: "8.png" }
 		].map(  (value) =>
 			<SocialItem key={ value.icon } name={ value.name } icon={ value.icon }></SocialItem>
 		);

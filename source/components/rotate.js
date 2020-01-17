@@ -5,8 +5,8 @@ import "../../assets/styles/rotate.scss"
 
 export default class Rotate extends React.Component {
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

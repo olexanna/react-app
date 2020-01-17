@@ -4,8 +4,8 @@ import "../../assets/styles/header.scss"
 
 export default class Header extends React.Component{
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

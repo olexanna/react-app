@@ -9,8 +9,8 @@ import "../../assets/styles/app.scss";
 
 export default class App extends React.Component{
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

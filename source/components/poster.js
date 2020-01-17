@@ -6,8 +6,8 @@ import PosterItem from "./poster.item";
 
 export default class Poster extends React.Component {
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

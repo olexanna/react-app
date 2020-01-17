@@ -3,8 +3,8 @@ import React from "react";
 
 export default class MenuItem extends React.Component{
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
 	render(){

@@ -1,19 +1,18 @@
 import React from "react";
+import SliderImageList from "./slider.image.list";
 import "../../assets/styles/gallery.scss"
 
 
 export default class Gallery extends React.Component {
 
-	constructor(){
-		super();
+	constructor( props ){
+		super( props );
 	}
 
-	 output( ){
-		alert("fuck");
-	};
-
 	render(){
-		return <section className={"gallery"} onClick={this.output}></section>
+		return <section className={"gallery"}>
+			<SliderImageList></SliderImageList>
+		</section>
 	}
 
 }
