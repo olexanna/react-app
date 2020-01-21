@@ -36,8 +36,8 @@ export default class SliderImageList extends React.Component {
 
 		this.display = key;
 		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/" + this.list[ key ].source + " )";
-
 	};
+
 	prev(){
 		this.click( this.display - 1 );
 	};
@@ -56,20 +56,23 @@ export default class SliderImageList extends React.Component {
 
 	render(){
 		return(
-			<section className={"slider-image-list"}>
-				<div key={ "image-display" } className={ "slider-display" }>
-					<div key={ "image-prev" } className={ "slider-prev" } onClick={ this.prev.bind( this ) }></div>
-					<div key={ "image" } className={ "slider-image" } ref={ this.image }></div>
-					<div key={ "image-next" } className={ "slider-next" } onClick={ this.next.bind( this ) }></div>
-				</div>
-				<div key={ "image-left" } className={ "slider-left" } onClick={ this.left.bind( this ) }></div>
-				<div key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
-					{ this.list.map( (value, key) =>
-						<div key={ value.source } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url( ../assets/images/gallery/" + value.source + ")" }}></div>
-					) }
-				</div>
-				<div key={ "image-right" } className={ "slider-right" } onClick={ this.right.bind( this ) }></div>
-			</section>
+			<div className={"slider-image-list d-flex fd-column"}>
+				<p key={ "image-display" } className={ "slider-display" }>
+					<button key={ "image-prev" } className={ "slider-prev" } onClick={ this.prev.bind( this ) }></button>
+					<span key={ "image" } className={ "slider-image" } ref={ this.image }></span>
+					<button key={ "image-next" } className={ "slider-next" } onClick={ this.next.bind( this ) }></button>
+				</p>
+
+				<p className={"carousel"}>
+					<button key={ "image-left" } className={ "slider-left" } onClick={ this.left.bind( this ) }></button>
+					<span key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
+						{ this.list.map( (value, key) =>
+							<div key={ value.source } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url( ../assets/images/gallery/" + value.source + ")" }}></div>
+						) }
+					</span>
+					<button key={ "image-right" } className={ "slider-right" } onClick={ this.right.bind( this ) }></button>
+				</p>
+			</div>
 		)
 	}
 

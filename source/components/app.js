@@ -18,8 +18,8 @@ export default class App extends React.Component{
 			<React.Fragment>
 					<Header name={this.props.name}></Header>
 					<Rotate></Rotate>
-					<Poster></Poster>
 					<Gallery></Gallery>
+					<Poster></Poster>
 					<Footer></Footer>
 			</React.Fragment>
 		)

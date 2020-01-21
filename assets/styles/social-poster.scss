@@ -1,20 +1,29 @@
 .social-poster{
 	position: relative;
 	width: 100%;
-	background: #140a07;
+	background: #000000;
 	padding: 37px 0px 35px 0px;
 
 	& > .poster-block{
-			width: 40%;
+			border: 1px solid #ffffff45;
+			width: 58%;
 			margin: 0 auto;
+			padding: 35px 175px 39px 248px;
+			border-radius: 10px;
 
 			.poster-shell{
 				color: white;
+				border: 1px solid #ffffff75;
+				padding: 22px 29px 32px 29px;
+				margin: 0px 42px 0px 0px;
 
 				& >.poster-title{
-						padding: 6px 0px 0px 0px;
+						padding: 8px 26px 7px 27px;
 						font-size: 22px;
 						letter-spacing: 2px;
+						border: 1px solid  #ffffff96;
+						border-radius: 4px;
+						margin-top: 38px;
 				}
 
 				& > .poster-item img{

@@ -29,7 +29,11 @@
 }
 
 .fd-column{
-	flex-direction: column;
+	 flex-direction: column;
+ }
+
+.fd-column-reserve{
+	flex-direction: column-reverse;
 }
 
 .ai-center{
