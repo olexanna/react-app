@@ -8,14 +8,25 @@ export default class SliderImageList extends React.Component {
 	constructor( props ){
 		super( props );
 		this.list = [
-			{ name: "1", source: "1.jpg" },
-			{ name: "2", source: "2.jpg" },
-			{ name: "3", source: "3.jpg" },
-			{ name: "4", source: "4.jpg" },
-			{ name: "5", source: "5.jpg" },
-			{ name: "6", source: "6.jpg" },
-			{ name: "7", source: "7.jpg" },
-			{ name: "8", source: "8.jpg" },
+			{ name: "1", source: "Affogato-Pistachio-Con-Espresso-Schiuma.jpg" },
+			{ name: "2", source: "BIANCO-LEGGERO-ALTERNATIVE-SOY-MILK.jpg" },
+			{ name: "3", source: "Chestnut-Oat-Flat-White.jpg" },
+			{ name: "5", source: "Chestnut-Soy-Cappuccino.jpg" },
+			{ name: "6", source: "Cinnabombon.jpg" },
+			{ name: "4", source: "Cloudberry-Affogato.jpg" },
+			{ name: "7", source: "Cortado.jpg" },
+			{ name: "8", source: "Dolce-and-Soy.jpg" },
+			{ name: "8", source: "Double-Cappuccino.jpg" },
+			{ name: "8", source: "Flat-White-Over-Ice.jpg" },
+			{ name: "8", source: "Ginger-Bread-Viennois.jpg" },
+			{ name: "8", source: "Golden-Shores.jpg" },
+			{ name: "8", source: "Intense-Cappuccino.jpg" },
+			{ name: "8", source: "Long-Black-Over-Ice.jpg" },
+			{ name: "8", source: "nespresso-recipes-Agave-Oat-Cappuccino.jpg" },
+			{ name: "8", source: "Reverso-Intenso.jpg" },
+			{ name: "8", source: "Salted-Caramel-Mocha.jpg" },
+			{ name: "8", source: "Sweet-Popcorn-Cappuccino.jpg" },
+			{ name: "8", source: "Variations-paris-praline-creamy-indulgence.jpg" }
 		];
 		this.display = -1;
 		this.image = React.createRef();
@@ -35,7 +46,7 @@ export default class SliderImageList extends React.Component {
 			return;
 
 		this.display = key;
-		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/" + this.list[ key ].source + " )";
+		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key ].source + " )";
 	};
 
 	prev(){
@@ -56,23 +67,23 @@ export default class SliderImageList extends React.Component {
 
 	render(){
 		return(
-			<div className={"slider-image-list d-flex fd-column"}>
-				<p key={ "image-display" } className={ "slider-display" }>
+			<section className={"slider-image-list d-flex fd-column"}>
+				<div key={ "image-display" } className={ "slider-display" }>
 					<button key={ "image-prev" } className={ "slider-prev" } onClick={ this.prev.bind( this ) }></button>
-					<span key={ "image" } className={ "slider-image" } ref={ this.image }></span>
+					<p key={ "image" } className={ "slider-image" } ref={ this.image }></p>
 					<button key={ "image-next" } className={ "slider-next" } onClick={ this.next.bind( this ) }></button>
-				</p>
+				</div>
 
-				<p className={"carousel"}>
+				<div className={"carousel d-flex"}>
 					<button key={ "image-left" } className={ "slider-left" } onClick={ this.left.bind( this ) }></button>
-					<span key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
+					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
 						{ this.list.map( (value, key) =>
-							<div key={ value.source } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url( ../assets/images/gallery/" + value.source + ")" }}></div>
+							<span key={ value.source } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url(../assets/images/gallery/display-coffe/bigImgCoffe/" + value.source + ")" }}></span>
 						) }
-					</span>
+					</p>
 					<button key={ "image-right" } className={ "slider-right" } onClick={ this.right.bind( this ) }></button>
-				</p>
-			</div>
+				</div>
+			</section>
 		)
 	}
 

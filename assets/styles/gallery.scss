@@ -4,13 +4,13 @@
 }
 
 .slider-image-list{
-	width: 700px;
+	width: 100%;
 	margin: 0 auto;
 }
 
 	.slider-display{
-		width: 640px;
-		height: 380px;
+		width: 100%;
+		height: 400px;
 		position: relative;
 		margin: 0 auto;
 	}
@@ -43,25 +43,25 @@
 		}
 
 	.carousel{
-		width: 600px;
+		width: 100%;
 	}
 		.slider-left{
 			width: 40px;
-			height: 200px;
+			height:inherit;
 			background: #ba478f;
 			position: relative;
 			float: left;
 		}
 		.slider-right{
 			width: 40px;
-			height: 200px;
+			height:inherit;
 			background: #ba478f;
 			position: relative;
 			float: left;
 		}
 		.slider-list{
-			width: 400px;
-			height: 200px;
+			width: 100%;
+			height: 139px;
 			background: #c9a0ff;
 			position: relative;
 			float: left;
@@ -69,8 +69,8 @@
 			overflow: hidden;
 		}
 		.slider-item{
-			width: 120px;
-			height: 120px;
+			width: 130px;
+			height: 130px;
 			background-color: #5b3217;
 			position: relative;
 			margin: 4px;

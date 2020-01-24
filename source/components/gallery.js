@@ -10,9 +10,11 @@ export default class Gallery extends React.Component {
 	}
 
 	render(){
-		return <section className={"gallery"}>
-			<SliderImageList></SliderImageList>
-		</section>
+		return(
+			<article className={"gallery"}>
+					<SliderImageList></SliderImageList>
+			</article>
+		)
 	}
 
 }
