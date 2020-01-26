@@ -1,11 +1,13 @@
 .gallery{
 	position: relative;
-	background: white;
+	background: black;
+	margin: 20px 0px 20px 0px;
 }
 
 .slider-image-list{
 	width: 100%;
 	margin: 0 auto;
+	background: black;
 }
 
 	.slider-display{
@@ -17,52 +19,59 @@
 		.slider-image{
 			width: 100%;
 			height: 100%;
-			background-color: blueviolet;
 			position: absolute;
-			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
 		}
 		.slider-prev{
 			width: 60px;
 			height: 100%;
-			background: rgba(226, 43, 43, 0.24);
 			left: 0px;
 			top: 0px;
 			position: absolute;
 			z-index: 1;
+			background: rgba(0, 0, 0, 0.43);
+			border: 1px solid #92929266;
+			outline: none;
 		}
 		.slider-next{
 			width: 60px;
 			height: 100%;
-			background: rgba(226, 43, 43, 0.24);
 			right: 0px;
 			top: 0px;
 			position: absolute;
 			z-index: 1;
+			border: 1px solid #92929266;
+			outline: none;
+			background: rgba(0, 0, 0, 0.43);
 		}
 
 	.carousel{
 		width: 100%;
+		margin: 6px 0px 0px 0px;
 	}
 		.slider-left{
 			width: 40px;
 			height:inherit;
-			background: #ba478f;
 			position: relative;
 			float: left;
+			background: rgba(0, 0, 0, 0.43);
+			border: 1px solid #92929266;
+			outline: none;
 		}
 		.slider-right{
 			width: 40px;
 			height:inherit;
-			background: #ba478f;
 			position: relative;
 			float: left;
+			background: rgba(0, 0, 0, 0.43);
+			border: 1px solid #92929266;
+			outline: none;
 		}
 		.slider-list{
 			width: 100%;
 			height: 139px;
-			background: #c9a0ff;
+			background:black;
 			position: relative;
 			float: left;
 			white-space: nowrap;

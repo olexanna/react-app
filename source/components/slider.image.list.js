@@ -45,7 +45,7 @@ export default class SliderImageList extends React.Component {
 		if( key < 0 || key >= this.list.length )
 			return;
 
-		this.display = key.source;
+		this.display = key;
 		console.log( this.list[ key ].source );
 		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key ].source + " )";
 	};
@@ -70,13 +70,13 @@ export default class SliderImageList extends React.Component {
 		return(
 			<section className={"slider-image-list d-flex fd-column"}>
 				<div key={ "image-display" } className={ "slider-display" }>
-					<button /*key={ "image-prev" }*/ className={ "slider-prev" } onClick={ this.prev.bind( this ) }></button>
-					<p /*key={ "image" }*/ className={ "slider-image" } ref={ this.image }></p>
-					<button /*key={ "image-next" }*/ className={ "slider-next" } onClick={ this.next.bind( this ) }></button>
+					<button  key={ "image-prev" }  className={ "slider-prev" } onClick={ this.prev.bind( this ) }></button>
+					<p  key={ "image" } className={ "slider-image" } ref={ this.image }></p>
+					<button  key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) }></button>
 				</div>
 
 				<div className={"carousel d-flex"}>
-					<button /*key={ "image-left" }*/ className={ "slider-left" } onClick={ this.left.bind( this ) }></button>
+					<button key={ "image-left" } className={ "slider-left" } onClick={ this.left.bind( this ) }></button>
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
 						{ this.list.map( (value, key) =>
 							<span key={ value.preview }  className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url(../assets/images/gallery/preview-coffe/prewieImgCoffe/" + value.preview + ")" }}></span>
