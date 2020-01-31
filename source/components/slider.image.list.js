@@ -103,6 +103,7 @@ export default class SliderImageList extends React.Component {
 	};
 	right(){
 		this.imageList.current.scrollLeft = this.imageList.current.scrollLeft + 128;
+
 	};
 
 	click( key ){
@@ -139,22 +140,26 @@ export default class SliderImageList extends React.Component {
 		return(
 			<section className={"slider-image-list d-flex fd-column"}>
 				<div key={ "image-display" } className={ "slider-display" }>
-					<button  key={ "image-prev" }  className={ "slider-prev" } onClick={ this.prev.bind( this ) }></button>
+					<p  key={ "image-prev" }  className={ "slider-prev" } onClick={ this.prev.bind( this ) }></p>
+
 					<div key={ "image" } className={ "slider-image" } ref={ this.image }>
 						<p className={"backdrop-title-image"}>
 							<span key={"title-image"} ref={this.textTitle } className={"title-image"}></span>
 						</p>
 					</div>
-					<button  key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) }></button>
+
+					<p  key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) }></p>
 				</div>
 
 				<div className={"carousel d-flex"}>
 					<button key={ "image-left" } className={ "slider-left" } onClick={ this.left.bind( this ) }></button>
+
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
 						{ this.list.map( (value, key) =>
 							<span key={ value.preview }  className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url(../assets/images/gallery/preview-coffe/prewieImgCoffe/" + value.preview + ")" }}></span>
 						) }
 					</p>
+
 					<button key={ "image-right" } className={ "slider-right" } onClick={ this.right.bind( this ) }></button>
 				</div>
 			</section>
