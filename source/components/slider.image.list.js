@@ -7,6 +7,7 @@ export default class SliderImageList extends React.Component {
 
 	constructor( props ){
 		super( props );
+
 		this.list = [
 			{ title: "Making Pistachio Ice Cream with Vertu Diavoletto coffee",
 			   source: "Affogato-Pistachio-Con-Espresso-Schiuma.jpg",
@@ -92,10 +93,14 @@ export default class SliderImageList extends React.Component {
 			   preview:"Variations-paris-praline-creamy-indulgence-m.jpg"
 			}
 		];
-		this.display = -1;
+		this.display = 0;
 		this.image = React.createRef();
+		this.image2 = React.createRef();
 		this.imageList = React.createRef();
 		this.textTitle =  React.createRef();
+
+		this.refPrev = React.createRef();
+		this.refNext = React.createRef();
 	};
 
 	left(){
@@ -103,7 +108,6 @@ export default class SliderImageList extends React.Component {
 	};
 	right(){
 		this.imageList.current.scrollLeft = this.imageList.current.scrollLeft + 128;
-
 	};
 
 	click( key ){
@@ -112,16 +116,29 @@ export default class SliderImageList extends React.Component {
 			return;
 
 		this.display = key;
-		console.log( this.list[ key ].title );
-		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key ].source +" )";
+		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key ].source + " )";
+
 		this.textTitle.current.innerHTML = this.list[ key ].title;
+
+		//this.image.current.style.width = (this.image * 1640)+ "px" ;
+		this.image.current.style.left =  ( this.display * 1640 * -1 )  + "px";
+
+		if( key == 0 )
+			{ this.refPrev.current.style.display = "none"; }
+		else
+			{ this.refPrev.current.style.display = "block"; }
+
+		if( key == (this.list.length - 1) )
+			{ this.refNext.current.style.display = "none"; }
+		else
+			{ this.refNext.current.style.display = "block"; }
+
+		console.log( this.list[ key ].title, key );
 	};
 
 	prev(){
 		this.click( this.display - 1 );
 	};
-
-
 
 	next(){
 		this.click( this.display + 1 );
@@ -133,22 +150,27 @@ export default class SliderImageList extends React.Component {
 			return;
 
 		this.imageList.current.firstElementChild.click();
-
 	};
 
+
 	render(){
+
 		return(
 			<section className={"slider-image-list d-flex fd-column"}>
 				<div key={ "image-display" } className={ "slider-display" }>
-					<p  key={ "image-prev" }  className={ "slider-prev" } onClick={ this.prev.bind( this ) }></p>
+					<p  key={ "image-prev" }  className={ "slider-prev" }  onClick={ this.prev.bind( this ) }  ref={ this.refPrev }  >
+						<span  key={ "arrow-prev" } className={"arrow-left"}>&lt;</span>
+					</p>
 
-					<div key={ "image" } className={ "slider-image" } ref={ this.image }>
-						<p className={"backdrop-title-image"}>
-							<span key={"title-image"} ref={this.textTitle } className={"title-image"}></span>
-						</p>
-					</div>
+					<div key={ "image" } className={ "slider-image" } ref={ this.image }></div>
+					<div key={ "image2" } className={ "slider-image" } ref={ this.image2 }></div>
+					<p className={"backdrop-title-image"}>
+						<span key={"title-image"} ref={ this.textTitle } className={"title-image"}></span>
+					</p>
 
-					<p  key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) }></p>
+					<p  key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) } ref ={ this.refNext }>
+						<span className={"arrow-right"}>	&gt;</span>
+					</p>
 				</div>
 
 				<div className={"carousel d-flex"}>
@@ -165,5 +187,6 @@ export default class SliderImageList extends React.Component {
 			</section>
 		)
 	}
+
 
 };

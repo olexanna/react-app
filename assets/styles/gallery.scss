@@ -11,18 +11,23 @@
 }
 
 	.slider-display{
+		//display: block;
 		width: 100%;
 		height: 510px;
 		position: relative;
 		margin: 0 auto;
+		//transform: translateX(1640px);
+		overflow: hidden;
 	}
 		.slider-image{
+			//display:inline-block;
 			position: relative;
-			width: 100%;
+			//width: 100%;
 			height: 100%;
-			position: absolute;
+			transition: all 1s;
 			background-repeat: no-repeat;
 			background-position: center;
+			//overflow: hidden;
 		}
 
 			.backdrop-title-image{
@@ -56,32 +61,63 @@
 
 				}
 
-		.slider-prev{
+		.slider-prev, .slider-next{
 			width: 89px;
-			height: 100%;;
+			height: 100%;
 			left: 0px;
 			top: 0px;
 			position: absolute;
 			z-index: 1;
-			background-color: rgba(0, 0, 0, 0.43);
-			border: 1px solid #92929266;
-			outline: none;
-			background-image: url("/assets/images/gallery/arrows/arrow-gallery-left-1.png");
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: center;
+			cursor: pointer;
+			transition: 0.8s;
 		}
+
 		.slider-next{
-			width: 60px;
-			height: 100%;
-			right: 0px;
-			top: 0px;
-			position: absolute;
-			z-index: 1;
-			border: 1px solid #92929266;
-			outline: none;
-			background: rgba(0, 0, 0, 0.43);
+			right:  0px!important;
+			top: 0px!important;
+			left: unset;
 		}
+
+		.slider-prev:hover, .slider-next:hover{
+			background-color: rgba(255, 255, 255, 0.12);
+			transition: 0.8s;
+		}
+			.arrow-left, .arrow-right{
+				width: 43px;
+				height: 43px;
+				left: 20px;
+				top: 50%;
+				margin-top: -16px;
+				position: absolute;
+				z-index: 1;
+				background-color: rgba(149, 149, 149, 0.37);
+				outline: none;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: left center;
+				border-radius: 32px;
+				font-weight: bold;
+				font-size: 32px;
+				letter-spacing: -3px;
+				text-align: center;
+				padding: 0px 0px 0px 0px;
+				line-height: 1.4;
+				font-family:'Arial' ;
+				color: rgba(255, 255, 255, 0.55);
+				border: 1px solid #ffffff80;
+				transform: translateZ(10px) scale(1.5);
+				cursor: pointer;
+			}
+
+			.arrow-left{
+				letter-spacing: 3px!important;
+			}
+
+			.arrow-left:hover, .arrow-right:hover{
+				color: rgba(172, 172, 189, 0.76);
+				background-color: #f3f3f399;
+				transition: 0.2s;
+			}
 
 	.carousel{
 		width: 100%;
@@ -127,26 +163,3 @@
 		}
 
 
-/*		.arrow-slider-left{
-			width: 50px;
-			height: 50px;
-			left: 20px;
-			top: 50%;
-			margin-top: -16px;
-			position: absolute;
-			z-index: 1;
-			background-color: rgba(255, 255, 255, 0.85);
-			outline: none;
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: left center;
-			border-radius: 32px;
-			font-weight: bold;
-			font-size: 34px;
-			text-align: center;
-			padding: 0px 0px 0px 0px;
-			line-height: 1.4;
-			font-family: Arial;
-			color: #78838d5e;
-			border: 1px solid white;
-		}*/
