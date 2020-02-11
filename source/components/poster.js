@@ -19,11 +19,13 @@ export default class Poster extends React.Component {
 			<PosterItem key={ value.icon } name={ value.name } icon={ value.icon }></PosterItem>
 		);
 
-		return <section className={"social-poster"}>
-						<div className={"poster-block d-flex jc-between"}>
-							{posterItem}
-						</div>
-					</section>
+		return(
+			<section className={"social-poster"}>
+				<div className={"poster-block d-flex jc-between"}>
+					{posterItem}
+				</div>
+			</section>
+		)
 	}
 
 }
