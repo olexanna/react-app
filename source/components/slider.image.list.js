@@ -93,11 +93,15 @@ export default class SliderImageList extends React.Component {
 			   preview:"Variations-paris-praline-creamy-indulgence-m.jpg"
 			}
 		];
-		this.display = 0;
-		this.image = React.createRef();
+		this.display = -1;
+		this.image1 = React.createRef();
 		this.image2 = React.createRef();
 		this.imageList = React.createRef();
 		this.textTitle =  React.createRef();
+		this.params = {
+			width: "1640px"
+		};
+		this.interval = null;
 
 		this.refPrev = React.createRef();
 		this.refNext = React.createRef();
@@ -110,18 +114,44 @@ export default class SliderImageList extends React.Component {
 		this.imageList.current.scrollLeft = this.imageList.current.scrollLeft + 128;
 	};
 
+	animation( key, path1, path2, width, position, left, direction ){
+
+		if( !path1 || !path2 )
+			return;
+
+		let speed = 64;
+
+		this.image1.current.style.backgroundImage = "url( " + path1 + " )";
+		this.image2.current.style.backgroundImage = "url( " + path2 + " )";
+
+		this.textTitle.current.innerHTML = this.list[ key ].title;
+		this.image1.current.style.left = ( (position - left) + "px" );
+		this.image2.current.style.left = ( (position + width - left) + "px" );
+
+		clearInterval( this.interval );
+		this.interval = setInterval(() => {
+
+			if( left >= width || left <= -width ){
+				clearInterval( this.interval );
+				return;
+			};
+
+			left += speed * direction;
+
+			if( left > width )
+				left = width;
+			if( left < -width )
+				left = -width;
+
+			this.image1.current.style.left = ( (position - left) + "px" );
+			this.image2.current.style.left = ( (position + width - left) + "px" );
+		}, 1000 / 60 );
+
+	};
 	click( key ){
 
 		if( key < 0 || key >= this.list.length )
 			return;
-
-		this.display = key;
-		this.image.current.style.backgroundImage = "url( ../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key ].source + " )";
-
-		this.textTitle.current.innerHTML = this.list[ key ].title;
-
-		//this.image.current.style.width = (this.image * 1640)+ "px" ;
-		this.image.current.style.left =  ( this.display * 1640 * -1 )  + "px";
 
 		if( key == 0 )
 			{ this.refPrev.current.style.display = "none"; }
@@ -133,7 +163,36 @@ export default class SliderImageList extends React.Component {
 		else
 			{ this.refNext.current.style.display = "block"; }
 
-		console.log( this.list[ key ].title, key );
+		let left = 0;
+		let width = this.image1.current.clientWidth || 1640;
+		let direction = key > this.display ? 1 : -1;
+		let position = direction > 0 ? 0 : -width;
+		let key1 = direction > 0 ? this.display : key;
+		let key2 = direction > 0 ? key : this.display;
+		this.display = key;
+
+		if( !this.list[ key1 ] ){
+			key1 = key2;
+			left = width;
+		}else if( key1 === key2 )
+			left = -width;
+
+		let image1 = new Image();
+		let image2 = new Image();
+		let path1 = "";
+		let path2 = "";
+
+		image1.onload = ( event ) => {
+			path1 = event.path[ 0 ].src;
+			this.animation( key, path1, path2, width, position, left, direction );
+		};
+		image1.src = "../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key1 ].source;
+		image2.onload = ( event ) => {
+			path2 = event.path[ 0 ].src;
+			this.animation( key, path1, path2, width, position, left, direction );
+		};
+		image2.src = "../assets/images/gallery/display-coffe/bigImgCoffe/" + this.list[ key2 ].source;
+
 	};
 
 	prev(){
@@ -162,8 +221,8 @@ export default class SliderImageList extends React.Component {
 						<span  key={ "arrow-prev" } className={"arrow-left"}>&lt;</span>
 					</p>
 
-					<div key={ "image" } className={ "slider-image" } ref={ this.image }></div>
-					<div key={ "image2" } className={ "slider-image" } ref={ this.image2 }></div>
+					<div key={ "image1" } className={ "slider-image image1" } ref={ this.image1 }></div>
+					<div key={ "image2" } className={ "slider-image image2" } ref={ this.image2 }></div>
 					<p className={"backdrop-title-image"}>
 						<span key={"title-image"} ref={ this.textTitle } className={"title-image"}></span>
 					</p>
