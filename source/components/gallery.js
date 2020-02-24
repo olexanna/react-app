@@ -89,20 +89,16 @@ let GalleryList = [
 ];
 let BannerList = [
 	{ title: "gsdfgdfg",
-		source: "/rotate/background-1.jpg",
-		preview: "/rotate/background-1.jpg",
+		source: "/rotate/act-cup-coffe.jpg",
+		preview: "/rotate/act-cup-coffe.jpg"
+	},
+	{  title: "adasda",
+		source: "/rotate/act-coffe-cake.jpg",
+		preview: "/rotate/act-coffe-cake.jpg"
 	},
 	{ title: "adasda",
-		source: "/rotate/background-2.jpg",
-		preview: "/rotate/background-2.jpg",
-	},
-	{ title: "adasda",
-		source: "/rotate/background-3.jpg",
-		preview: "/rotate/background-3.jpg",
-	},
-	{ title: "adasda",
-		source: "/rotate/background-4.jpg",
-		preview: "/rotate/background-4.jpg",
+		source: "/rotate/action-card.jpg",
+		preview: "/rotate/action-card.jpg"
 	}
 ];
 
@@ -115,7 +111,7 @@ export default class Gallery extends React.Component {
 	render(){
 		return(
 			<article className={"gallery"}>
-				<SliderImageList rotation={ 2000 } hideui={ true } textcenter={ true } list={ BannerList }></SliderImageList>
+				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList }></SliderImageList>
 				<SliderImageList list={ GalleryList }></SliderImageList>
 			</article>
 		)

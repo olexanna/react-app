@@ -39,9 +39,7 @@ export default class Rotate extends React.Component {
 		this.rotateList2 = React.createRef();
 	}
 
-	loader(){
-		alert("fuck you");
-	}
+
 
 	componentDidMount(){
 	};
@@ -50,7 +48,6 @@ export default class Rotate extends React.Component {
 		return(
 
 			<section className={"rotate d-flex jc-end"}>
-
 				<div className={"rotate-gallery"} onLoad={ this.loader }>
 					<p key={ "rotate1" } className={ "rotate-slider rotate1" } ref={ this.rotateList1}></p>
 					<p  key={ "rotate2" } className={ "rotate-slider rotate2" } ref={ this.rotateList2 }></p>
