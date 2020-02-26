@@ -20,6 +20,7 @@ export default class SliderImageList extends React.Component {
 
 		this.refPrev = React.createRef();
 		this.refNext = React.createRef();
+		this.carousel =  React.createRef();
 		this.refBackgroundText = React.createRef();
 	};
 
@@ -149,6 +150,11 @@ export default class SliderImageList extends React.Component {
 			this.refPrev.current.style.display = "none";
 			this.imageList.current.style.display = "none";
 		};
+
+		if( this.props.hideCarousel ){
+			this.carousel.current.style.display = "none";
+		};
+
 		if( this.props.textcenter ){
 			this.refBackgroundText.current.style.display="none";
 		};
@@ -179,10 +185,10 @@ export default class SliderImageList extends React.Component {
 					</p>
 				</div>
 
-				<div className={"carousel d-flex"}>
-					<p className={"btn-arrow-left"} onClick={ this.left.bind( this ) }>
-						<span key={ "image-left" } className={ "slider-left" } ></span>
-					</p>
+				<div className={"carousel d-flex"} ref={ this.carousel}>
+					<div className={"btn-arrow-left"} onClick={ this.left.bind( this ) }>
+						<p key={ "image-left" } className={ "slider-left" } ></p>
+					</div>
 
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
 						{ this.list.map( (value, key) =>
@@ -190,9 +196,9 @@ export default class SliderImageList extends React.Component {
 						) }
 					</p>
 
-					<p  className={"btn-arrow-right"} onClick={ this.right.bind( this ) }>
-						<span key={ "image-right" } className={ "slider-right" } ></span>
-					</p>
+					<div  className={"btn-arrow-right"} onClick={ this.right.bind( this ) }>
+						<p key={ "image-right" } className={ "slider-right" } ></p>
+					</div>
 				</div>
 
 			</section>

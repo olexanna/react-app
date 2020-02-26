@@ -111,7 +111,7 @@ export default class Gallery extends React.Component {
 	render(){
 		return(
 			<article className={"gallery"}>
-				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList }></SliderImageList>
+				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList } hideCarousel={true}></SliderImageList>
 				<SliderImageList list={ GalleryList }></SliderImageList>
 			</article>
 		)
