@@ -14,6 +14,7 @@ export default class Poster extends React.Component {
 		let posterItem =  [
 			{ name: "Followers", icon: "user-black.png" },
 			{ name: "Reviews", icon: "comment-black-3.png" },
+			{ name: "Faqs", icon: "faq-black-1.png" },
 			{ name: "Faqs", icon: "faq-black-1.png" }
 		].map(  (value) =>
 			<PosterItem key={ value.icon } name={ value.name } icon={ value.icon }></PosterItem>

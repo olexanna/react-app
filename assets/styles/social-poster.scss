@@ -1,15 +1,19 @@
-.social-poster{
+.social-poster {
 	position: relative;
 	width: 100%;
 	background: #000000;
 	padding: 37px 0px 35px 0px;
+	border: 1px solid #454545;
+	border-radius: 6px;
+	box-shadow: inset 1px 1px 0px 12px #bdbdbd54;
 
 	& > .poster-block{
 			border: 1px solid #ffffff45;
-			width: 58%;
+			width: 80%;
 			margin: 0 auto;
-			padding: 35px 175px 39px 248px;
-			border-radius: 10px;
+			padding: 35px 78px 39px 108px;
+			border-radius: 3px;
+			box-shadow: inset 1px 1px 3px 10px #bdbdbd54;
 
 			.poster-shell{
 				color: white;
@@ -39,3 +43,5 @@
 	}
 
 }
+
+//#482b10;
