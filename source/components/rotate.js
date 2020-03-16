@@ -1,19 +1,23 @@
 import React from "react";
 import "../../assets/styles/gallery.scss"
+import "../../assets/styles/rotate.scss"
 import SliderImageList from "./slider.image.list";
 
 let BannerList = [
-	{ title: "gsdfgdfg",
-		source: "/rotate/act-cup-coffe.jpg",
-		preview: "/rotate/act-cup-coffe.jpg"
+	{
+		source: "/rotate/2-croissant.jpg",
+		titleRotate: "BARGAIN BREAKFAST: SECOND CROISSANT FOR FREE",
+		descriptionRotate:"Every morning from 9 am to 11 am, when you buy a coffee and a croissant, get a second croissant-free of charge"
 	},
-	{  title: "adasda",
-		source: "/rotate/act-coffe-cake.jpg",
-		preview: "/rotate/act-coffe-cake.jpg"
+	{
+		source: "/rotate/birthday.jpg",
+		titleRotate: "ON BIRTHDAYS-50% DISCOUNT",
+		descriptionRotate:"Celebrate your birthday with us and get a 50% discount on all types of drinks and snacks"
 	},
-	{ title: "adasda",
-		source: "/rotate/action-card.jpg",
-		preview: "/rotate/action-card.jpg"
+	{
+		source: "/rotate/2-cup.jpg",
+		titleRotate: "LUNCH WITH US-SECOND COFFEE FOR FREE",
+		descriptionRotate:"Every day, 12 to 16, when buying coffee, the second is provided free of charge"
 	}
 ];
 
@@ -29,8 +33,9 @@ export default class Rotate extends React.Component {
 
 	render(){
 		return(
-			<article className={"gallery"}>
-				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList } hideCarousel={true}></SliderImageList>
+			<article className={"gallery rotate"}>
+				<div className={"blackout"}></div>
+				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList } hideCarousel={true} rotateHeight={true}></SliderImageList>
 			</article>
 		)
 	}

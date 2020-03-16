@@ -9,27 +9,29 @@ export default class Header extends React.Component{
 	}
 
 	render(){
-		return<header className={"header text d-flex jc-between"}>
-						<div className={"logo-header"}></div>
-
-						<p className={"menu d-flex ai-center"}>
-							<span>Home</span>
-							<span>About</span>
-							<span>Menu</span>
-							<span>Stocks</span>
-							<span>News</span>
-							<span>Gallery</span>
-							<span>Contacts</span>
+		return(
+				<header className={"header"}>
+						<p className={"title-company"}>Coffee Cafe</p>
+						<p className={"menu"}>
+							<span>HOME</span>
+							<span>ABOUT</span>
+							<span>MENU</span>
+							<span>NEWS</span>
+							<span>GALLERY</span>
+							<span>CONTACTS</span>
 						</p>
-
-						<div className={"name-company"}></div>
-					</header>
+				</header>
 						/*<p>Немного о нас...
 						Мы молодая компания, в которой сотрудники являются фанатами своего дела.
 
 						Почему мы Кафе-лаборатория?
 						В нашей лаборатории-кафе разрабатываются самые креативные вкусы, способные удивить даже искушенную публику!
 
-						Посетите Cafe Lab и откройте для себя заново мир кофейного разнообразия!</p>-*/
+						Посетите Cafe Lab и откройте для себя заново мир кофейного разнообразия!</p>-
+
+						    border-bottom-right-radius: 53% 98%;
+    							border-bottom-left-radius: 51% 98%;
+						*/
+		)
 	}
 }

@@ -1,47 +1,59 @@
+
 .rotate{
-	width: 100%;
-	height: 520px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url("/assets/images/header/back-1.jpg");
-	z-index: 0;
 	position: relative;
-	border: 1px solid #29190f;
+	bottom: 108px;
+	height: 762px!important;
+	background: white;
+	z-index: 0;
 
-	& > .slogan-block{
-			width: 56%;
-			height: 13%;
-			margin-top: 100px;
-			position: relative;
+	&> .blackout{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: inherit;
+			height: inherit;
+			z-index: 1;
+			background: #0000008c;
+	}
 
-			& > .slogan-block-blur{
-				background: #8686866b;
-				filter: blur(67px);
-				width: 88%;
-				height: 13%;
-				padding: 100px 43px 0px 0px;
-			}
+}
 
-			& > .slogan-shell{
-					color: white;
-					font-size: 40px;
-					letter-spacing: 3px;
-					position: absolute;
-					top: 1px;
+.ground-promotion{
+	top: 50%!important;
+	bottom: 50%!important;
+	z-index: 3!important;
+	background:none!important;
+	padding: unset!important;
+	border: none!important;
+	font-size: 19px;
 
-					& > span{
-						display: block;
-					}
+	&> .block-promotions{
+		text-align: center;
 
-					& > .slogan-text{
+		& > span{
+			display: block;
+		}
 
-					}
+		& > .title-promotions{
+				font-size: 55px;
+				color: #fafafa;
+				letter-spacing: 1px;
+				font-family: 'Montserrat-Regular';
+		}
 
-					& > .slogan-subtext{
-
-					}
-			}
+		& > .description-promotions{
+				color: #dedede;
+				font-size: 24px;
+				letter-spacing: 1px;
+		}
 
 	}
 
 }
+
+ .slider-height{
+	height: 762px!important;
+}
+

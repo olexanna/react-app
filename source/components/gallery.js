@@ -97,7 +97,7 @@ export default class Gallery extends React.Component {
 	render(){
 		return(
 			<article className={"gallery"}>
-				<SliderImageList list={ GalleryList }></SliderImageList>
+				<SliderImageList list={ GalleryList } hideBlockPromotion={true}></SliderImageList>
 			</article>
 		)
 	}

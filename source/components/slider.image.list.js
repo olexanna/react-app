@@ -10,18 +10,25 @@ export default class SliderImageList extends React.Component {
 
 		this.list = [];
 		this.display = -1;
+		this.sliderDisplay = React.createRef();
 		this.image1 = React.createRef();
 		this.image2 = React.createRef();
 		this.imageList = React.createRef();
-		this.textTitle =  React.createRef();
 
 		this.interval = null;
 		this.rotationInterval = null;
 
+		this.textBlock ={
+			textTitle: React.createRef(),
+			refBackgroundText: React.createRef(),
+			blockPromotion:React.createRef(),
+			titleRotate: React.createRef(),
+			descriptionRotate: React.createRef()
+		};
+
 		this.refPrev = React.createRef();
 		this.refNext = React.createRef();
 		this.carousel =  React.createRef();
-		this.refBackgroundText = React.createRef();
 	};
 
 	left(){
@@ -41,7 +48,10 @@ export default class SliderImageList extends React.Component {
 		this.image1.current.style.backgroundImage = "url( " + path1 + " )";
 		this.image2.current.style.backgroundImage = "url( " + path2 + " )";
 
-		this.textTitle.current.innerHTML = this.list[ key ].title;
+		this.textBlock.textTitle.current.innerHTML = this.list[ key ].title;
+		this.textBlock.titleRotate.current.innerHTML = this.list[ key ].titleRotate;
+		this.textBlock.descriptionRotate.current.innerHTML = this.list[ key ].descriptionRotate;
+
 		this.image1.current.style.left = ( (position - left) + "px" );
 		this.image2.current.style.left = ( (position + width - left) + "px" );
 
@@ -149,18 +159,26 @@ export default class SliderImageList extends React.Component {
 			this.refNext.current.style.display = "none";
 			this.refPrev.current.style.display = "none";
 			this.imageList.current.style.display = "none";
-		};
+		}
 
 		if( this.props.hideCarousel ){
 			this.carousel.current.style.display = "none";
-		};
+		}
 
 		if( this.props.textcenter ){
-			this.refBackgroundText.current.style.display="none";
-		};
+			this.textBlock.textTitle.current.style.display = "none";
+		}
 
-	};
+		if( this.props.rotateHeight ){
+			this.sliderDisplay.current.classList.add( "slider-height" );
+			this.textBlock.refBackgroundText.current.classList.add( "ground-promotion" );
+		}
 
+		if( this.props.hideBlockPromotion ){
+			this.textBlock.blockPromotion.current.style.display = "none";
+		}
+
+	}
 
 	render(){
 
@@ -169,16 +187,23 @@ export default class SliderImageList extends React.Component {
 		return(
 			<section className={"slider-image-list d-flex fd-column"}>
 
-				<div key={ "image-display" } className={ "slider-display" }>
+				<div key={ "image-display" } className={ "slider-display" } ref={ this.sliderDisplay }>
 					<p key={ "image-prev" }  className={ "slider-prev" }  onClick={ this.prev.bind( this ) }  ref={ this.refPrev }  >
 						<span  key={ "arrow-prev" } className={"arrow-left"}>&lt;</span>
 					</p>
 
 					<div key={ "image1" } className={ "slider-image image1" } ref={ this.image1 }></div>
 					<div key={ "image2" } className={ "slider-image image2" } ref={ this.image2 }></div>
-					<p className={"backdrop-title-image"} ref={ this.refBackgroundText }>
-						<span key={"title-image"} ref={ this.textTitle } className={"title-image"}></span>
-					</p>
+
+					<div className={"backdrop-title-image"} ref={ this.textBlock.refBackgroundText }>
+						<p key={"title-image"} ref={ this.textBlock.textTitle } className={"title-image"}></p>
+
+						<p  className={"block-promotions"} ref={ this.textBlock.blockPromotion }>
+							<span ref={ this.textBlock.titleRotate } className={"title-promotions"}></span>
+							<span   ref={ this.textBlock.descriptionRotate} className={"description-promotions"}></span>
+							<span></span>
+						</p>
+					</div>
 
 					<p key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) } ref ={ this.refNext }>
 						<span className={"arrow-right"}>	&gt;</span>
@@ -187,7 +212,7 @@ export default class SliderImageList extends React.Component {
 
 				<div className={"carousel d-flex"} ref={ this.carousel}>
 					<div className={"btn-arrow-left"} onClick={ this.left.bind( this ) }>
-						<p key={ "image-left" } className={ "slider-left" } ></p>
+						<p key={ "image-left" } className={ "slider-left" }></p>
 					</div>
 
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
