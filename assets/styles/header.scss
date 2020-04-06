@@ -12,9 +12,11 @@
 }
 
 .title-company {
-	color: white;
-	font-size: 42px;
-	padding: 25px 0px 25px 0px;
+	color: #f3f3f3;
+	font-size: 48px;
+	padding: 17px 0px 10px 0px;
+	font-family: 'header-coffee';
+	letter-spacing: 4px;
 }
 
 .logo-header{
@@ -29,14 +31,16 @@
 }
 
 .header > .menu {
-	width: 43%;
+	width: 38%;
 	display: flex;
 	justify-content: space-between;
+	font-family: 'menu-coffee';
 }
 
 .header > .menu > span{
-	color: white;
-	font-size: 20px;
+	color: #e6e6e6;
+	font-size: 24px;
+	letter-spacing: 1.5px;
 }
 
 .header > .name-company{
@@ -50,4 +54,3 @@
 	margin-right: 250px;
 	background-size: contain;
 }
-
