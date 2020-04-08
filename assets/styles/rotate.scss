@@ -1,8 +1,8 @@
 
 .rotate{
 	position: relative;
-	bottom: 108px;
-	height: 762px!important;
+	bottom: 72px;
+	height: 600px!important;
 	background: white;
 	z-index: 0;
 
@@ -21,7 +21,7 @@
 }
 
 .ground-promotion{
-	top: 50%!important;
+	top: 40%!important;
 	bottom: 50%!important;
 	z-index: 3!important;
 	background:none!important;
@@ -30,23 +30,45 @@
 	font-size: 19px;
 
 	&> .block-promotions{
-		text-align: center;
+			text-align: center;
+			width: 80%;
+			margin: 0 auto;
 
 		& > span{
 			display: block;
 		}
 
 		& > .title-promotions{
-				font-size: 55px;
-				color: #fafafa;
-				letter-spacing: 1px;
-				font-family: 'rotate-serif';
+				font-size: 65px;
+				color: #f9f9f7;
+				font-family: 'market-serif';
 		}
 
 		& > .description-promotions{
 				color: #dedede;
-				font-size: 24px;
+				font-size: 27px;
 				letter-spacing: 1px;
+				font-family: 'sha';
+		}
+
+		& > .btn-deploy-info{
+				width: 163px;
+				margin: 29px auto 0 auto;
+				outline: 1px solid #3e3532fa;
+				letter-spacing: 0.5px;
+				padding: 11px 0px 10px 0px;
+				transform: skewX(-224deg);
+				cursor: pointer;
+				background: #2f2826fa;/*#231e1cfa; #231106fa;*/
+
+				& > .text-deploy-info{
+						display: block;
+						font-size: 16px;
+						color: #f8f7f5;
+						transform: skewX(-137deg);
+						padding: 1px 0px 1px 0px;
+						font-family: 'menu-coffee';
+				}
 		}
 
 	}
@@ -54,6 +76,7 @@
 }
 
  .slider-height{
-	height: 762px!important;
+	height: 600px!important;
 }
 
+/*600px*/

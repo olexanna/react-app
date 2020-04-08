@@ -198,11 +198,14 @@ export default class SliderImageList extends React.Component {
 					<div className={"backdrop-title-image"} ref={ this.textBlock.refBackgroundText }>
 						<p key={"title-image"} ref={ this.textBlock.textTitle } className={"title-image"}></p>
 
-						<p  className={"block-promotions"} ref={ this.textBlock.blockPromotion }>
+						<div  className={"block-promotions"} ref={ this.textBlock.blockPromotion }>
 							<span ref={ this.textBlock.titleRotate } className={"title-promotions"}></span>
 							<span   ref={ this.textBlock.descriptionRotate} className={"description-promotions"}></span>
-							<span></span>
-						</p>
+
+							<p className={"btn-deploy-info"}>
+								<span className={"text-deploy-info"}>MORE INFO</span>
+							</p>
+						</div>
 					</div>
 
 					<p key={ "image-next" }  className={ "slider-next" } onClick={ this.next.bind( this ) } ref ={ this.refNext }>

@@ -11,12 +11,12 @@ let BannerList = [
 	},
 	{
 		source: "/rotate/birthday.jpg",
-		titleRotate: "ON BIRTHDAYS-50% DISCOUNT",
-		descriptionRotate:"Celebrate your birthday with us and get a 50% discount on all types of drinks and snacks"
+		titleRotate: "FIFTY PERCENT BIRTHDAY DISCOUNT  ON ALL MENUS",
+		descriptionRotate:"Celebrate your birthday in our cafe and get a fifty percent discount on all items on our menu"
 	},
 	{
 		source: "/rotate/2-cup.jpg",
-		titleRotate: "LUNCH WITH US-SECOND COFFEE FOR FREE",
+		titleRotate: "LUNCH WITH US: SECOND COFFEE FOR FREE",
 		descriptionRotate:"Every day, 12 to 16, when buying coffee, the second is provided free of charge"
 	}
 ];
@@ -42,3 +42,8 @@ export default class Rotate extends React.Component {
 
 }
 
+/*
+FIFTY PERCENT BIRTHDAY DISCOUNT  ON ALL MENUS
+
+
+ */

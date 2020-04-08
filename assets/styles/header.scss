@@ -1,6 +1,7 @@
 .header {
-	width: 100%;
-	height: 165px;
+	width: 102%;
+	left: -1%;
+	height: 128px;
 	position: relative;
 	background: #0e0603;
 	border-bottom-right-radius: 50% 58%;
@@ -9,11 +10,22 @@
 	flex-direction: column;
 	align-items: center;
 	z-index: 2;
+
+	&-bg{
+		width: 102%;
+		height: 138px;
+		background: #0e0603c7;
+		border-bottom-right-radius: 50% 58%;
+		border-bottom-left-radius: 50% 58%;
+		position: absolute;
+		z-index: -1;
+	}
+
 }
 
 .title-company {
 	color: #f3f3f3;
-	font-size: 48px;
+	font-size: 36px;
 	padding: 17px 0px 10px 0px;
 	font-family: 'header-coffee';
 	letter-spacing: 4px;
@@ -31,7 +43,7 @@
 }
 
 .header > .menu {
-	width: 38%;
+	width: 31%;
 	display: flex;
 	justify-content: space-between;
 	font-family: 'menu-coffee';
@@ -39,7 +51,7 @@
 
 .header > .menu > span{
 	color: #e6e6e6;
-	font-size: 24px;
+	font-size: 18px;
 	letter-spacing: 1.5px;
 }
 

@@ -11,6 +11,7 @@ export default class Header extends React.Component{
 	render(){
 		return(
 				<header className={"header"}>
+						<div className={"header-bg"}></div>
 						<p className={"title-company"}>Coffee Cafe</p>
 						<p className={"menu"}>
 							<span>HOME</span>
