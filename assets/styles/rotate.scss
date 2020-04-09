@@ -1,7 +1,6 @@
 
 .rotate{
 	position: relative;
-	bottom: 72px;
 	height: 600px!important;
 	background: white;
 	z-index: 0;
@@ -39,20 +38,20 @@
 		}
 
 		& > .title-promotions{
-				font-size: 65px;
+				font-size: 58px;
 				color: #f9f9f7;
 				font-family: 'market-serif';
 		}
 
 		& > .description-promotions{
 				color: #dedede;
-				font-size: 27px;
+				font-size: 25px;
 				letter-spacing: 1px;
 				font-family: 'sha';
 		}
 
 		& > .btn-deploy-info{
-				width: 163px;
+				width: 160px;
 				margin: 29px auto 0 auto;
 				outline: 1px solid #3e3532fa;
 				letter-spacing: 0.5px;

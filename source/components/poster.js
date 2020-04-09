@@ -12,8 +12,8 @@ export default class Poster extends React.Component {
 
 	render(){
 		let posterItem =  [
-			{ name: "Followers", icon: "user-black.png" },
-			{ name: "Reviews", icon: "comment-black-3.png" },
+			{ name: "Coffee", icon: "coffee-cup-6.png" },
+			{ name: "Reviews", icon: "food-3.png" },
 			{ name: "Faqs", icon: "faq-black-1.png" },
 			{ name: "Faqs", icon: "faq-black-1.png" }
 		].map(  (value) =>
