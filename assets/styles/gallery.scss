@@ -1,17 +1,36 @@
 .gallery{
 	position: relative;
-	background: black;
+
+	& > .block-title-gallery{
+			padding: 34px 0px 41px 0px;
+			text-align: center;
+			background: black;
+
+			& > .large-title-gallery{
+					font-size: 55px;
+					color: white;
+					font-family: 'menu-coffee';
+					letter-spacing: 1px;
+			}
+
+			& > .small-title-gallery{
+				font-size: 19px;
+				color: white;
+				font-family: 'sha';
+				letter-spacing: 1px;
+			}
+
+	}
 }
 
 .slider-image-list{
 	width: 100%;
 	margin: 0 auto;
-	background: black;
 }
 
 	.slider-display{
 		width: 100%;
-		height: 510px;
+		height: 498px;
 		position: relative;
 		margin: 0 auto;
 		overflow: hidden;
@@ -41,7 +60,7 @@
 				padding: 11px 0px 6px 0px;
 				border-top: 1px solid #eef0f830;
 				border-bottom: 1px solid #d4dcff38;
-				font-size: 19px;
+				font-size: 15px;
 			}
 			.slider-textcenter{
 				height: 100%;
@@ -91,8 +110,8 @@
 			transition: 0.8s;
 		}
 			.arrow-left, .arrow-right{
-				width: 55px;
-				height: 55px;
+				width: 50px;
+				height: 49px;
 				left: 20px;
 				top: 50%;
 				margin-top: -16px;
@@ -105,12 +124,12 @@
 				background-position: left center;
 				border-radius: 32px;
 				font-weight: bold;
-				font-size: 44px;
+				font-size: 41px;
 				letter-spacing: -6px;
 				text-align: center;
 				padding: 0px 0px 0px 0px;
 				line-height: 1.3;
-				font-family:'Arial' ;
+				font-family: 'Arial';
 				color: rgba(255, 255, 255, 0.55);
 				border: 1px solid #ffffff91;
 				transform: translateZ(10px) scale(1.5);
@@ -129,7 +148,7 @@
 
 	.carousel{
 		width: 100%;
-		margin: 6px 0px 0px 0px;
+		margin: 1px 0px 0px 0px;
 
 		& > .btn-arrow-left{
 				position: relative;
@@ -168,25 +187,29 @@
 
 		& > .slider-list{
 				width: 100%;
-				height: 139px;
-				background:black;
-				position: relative;
 				float: left;
 				white-space: nowrap;
 				overflow: hidden;
 				display: block;
 
 			& > .slider-item{
-				width: 130px;
-				height: 130px;
-				background-color: black;
-				position: relative;
-				margin: 4px;
-				display: inline-block;
-				background-size: cover;
-				background-position: center;
-				outline: 1px solid #e1ddff;
+					width: 105px;
+					height: 100px;
+					position: relative;
+					margin: 1px 4px 0px 0px;
+					display: inline-block;
+					background-size: cover;
+					background-position: center;
+					outline: 1px solid white;
+					cursor: pointer;
+					filter: brightness(0.5);
 			}
+
+			& > .slider-item:hover{
+					filter: brightness(1);
+					transition-duration: 0.2s;
+			}
+
 		}
 
 	}

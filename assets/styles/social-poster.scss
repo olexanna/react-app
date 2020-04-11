@@ -1,48 +1,71 @@
-.social-poster {
-	position: relative;
-	width: 100%;
-	background: #1a1111;/* #0d0907;*/
-	padding: 42px 0px 35px 0px;
+.wrap-social-poster{
+	background: black;
 
-	& > .poster-block{
-			width: 80%;
+& >	.block-social-title{
+		color: white;
+		text-align: center;
+		padding: 38px 0px 42px 0px;
+
+		& > .large-social-title{
+				font-size: 55px;
+				color: white;
+				font-family: 'menu-coffee';
+				letter-spacing: 1px;
+		}
+
+		& > .small-social-title{
+				font-size: 19px;
+				color: white;
+				font-family: 'sha';
+				letter-spacing: 1px;
+		}
+
+	}
+
+& >.social-poster{
+		position: relative;
+		width: 100%;
+		background: #0e0603;
+		padding: 57px 0px 35px 0px;
+
+		& > .poster-block{
+			width: 74%;
 			margin: 0 auto;
-			padding:0px 0px 0px 0px;
+			padding: 0px 0px 0px 0px;
 
 			.poster-shell{
-				color: white;
 				padding: 0px 0px 0px 0px;
 				margin: 0px 0px 0px 0px;
 
-				& >.poster-title{
-						padding: 16px 0px 0px 0px;
-						font-size: 22px;
-						letter-spacing: 2px;
-						font-family: 'menu-coffee';
+				& > .poster-title{
+					padding: 25px 0px 0px 0px !important;
+					font-size: 22px;
+					letter-spacing: 2px;
+					color: #e7e7e7;
+					font-family: 'menu-coffee';
 				}
 
-
 				& > .poster-item{
-						border-radius: 78px;
-						border: 4px solid white;
-						background: white;
-						padding: 28px 27px 20px 29px;
+					border-radius: 78px;
+					border: 4px solid white;
+					background: #f9f9f9;
+					padding: 28px 27px 20px 29px;
 				}
 
 				& > .poster-item img{
-						width: 70px;
+					width: 70px;
 				}
 
 			}
 
+		}
+
+	}
+
+	.poster-shell:first-child span{
+		padding: 18px 27px 20px 30px !important;
 	}
 
 }
-
-.poster-item:only-child{
-	padding: 18px 27px 20px 30px!important;
-}
-
-
 
 //#482b10;

@@ -97,6 +97,11 @@ export default class Gallery extends React.Component {
 	render(){
 		return(
 			<article className={"gallery"}>
+				<div className={"block-title-gallery"}>
+					<p className={"large-title-gallery"}>GALLERY</p>
+					<p className={"small-title-gallery"}>The gallery contains a short list of drinks coffee cafes</p>
+				</div>
+
 				<SliderImageList list={ GalleryList } hideBlockPromotion={true}></SliderImageList>
 			</article>
 		)
