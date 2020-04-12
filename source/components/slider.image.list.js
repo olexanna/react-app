@@ -215,7 +215,7 @@ export default class SliderImageList extends React.Component {
 
 				<div className={"carousel d-flex"} ref={ this.carousel}>
 					<div className={"btn-arrow-left"} onClick={ this.left.bind( this ) }>
-						<p key={ "image-left" } className={ "slider-left" }></p>
+						<p key={ "image-left" } className={ "slider-left" }>&#10094;</p>
 					</div>
 
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
@@ -225,7 +225,7 @@ export default class SliderImageList extends React.Component {
 					</p>
 
 					<div  className={"btn-arrow-right"} onClick={ this.right.bind( this ) }>
-						<p key={ "image-right" } className={ "slider-right" } ></p>
+						<p key={ "image-right" } className={ "slider-right" } >&#10095;</p>
 					</div>
 				</div>
 

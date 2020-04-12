@@ -1,0 +1,41 @@
+.impress-wrap{
+	position: relative;
+	width: 100%;
+	color: white;
+	padding: 29px 0px 22px 0px;
+	background: #110804;
+
+	& > .impress-block{
+			width: 74%;
+			margin: 0 auto;
+
+		& > .ava-impress{
+				width: 120px;
+				height: 120px;
+				background-image: url("/assets/images/impress/woman-3.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				box-sizing: border-box;
+				border-radius: 100px;
+				background-position-x: center;
+		}
+
+		& > .comment-impress{
+				padding: 27px 0px 0px 38px;
+				width: 70%;
+
+			& > span.text-comment-impress{
+					display: block;
+					font-family: 'market-serif';
+			}
+
+			& > span.label-comment-impress{
+					display: block;
+					font-family: 'sha';
+			}
+
+		}
+
+
+	}
+}
