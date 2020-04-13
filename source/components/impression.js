@@ -10,9 +10,11 @@ export default class Impression  extends React.Component {
 	render(){
 
 		return(
-			<section className={"impress-wrap"}>
+			<article className={"impress-primary"}>
+				<section className={"impress-wrap d-flex fd-row"}>
+
 					<div className={"impress-block d-flex fd-column fd-row"}>
-						<p className={"ava-impress"}></p>
+						<p className={"ava-impress woman"}></p>
 
 						<p className={"comment-impress"}>
 							<span className={"text-comment-impress"}>
@@ -23,9 +25,26 @@ export default class Impression  extends React.Component {
 							<span className={"label-comment-impress"}>Anna Miller, San-Francisco</span>
 						</p>
 					</div>
-			</section>
+
+					<div className={"impress-block d-flex fd-column fd-row"}>
+						<p className={"ava-impress man"}></p>
+
+						<p className={"comment-impress"}>
+								<span className={"text-comment-impress"}>
+									"For 3 years, I have been coming to a coffee shop for lunch. I like the quality of drinks and food, as well as affordable prices.
+									Several times I went to a coffee shop to celebrate my birthday with friends and was very happy with how quickly we were served.
+									I recommend coffee to all cafes, since I have never left this place with a bad mood."
+								</span>
+							<span className={"label-comment-impress"}>Michael Smith, San-Francisco</span>
+						</p>
+					</div>
+				</section>
+
+				<p className={"link-comments"}>
+					<span>Different comments</span>
+					<span> &#10137;</span>
+				</p>
+			</article>
 		)
 	}
-
-
 }
