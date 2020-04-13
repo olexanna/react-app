@@ -20,8 +20,8 @@ export default class App extends React.Component{
 				<Header name={this.props.name}></Header>
 				<Rotate></Rotate>
 				<Poster></Poster>
-				<Impression></Impression>
 				<Gallery></Gallery>
+				<Impression></Impression>
 				<Footer></Footer>
 			</React.Fragment>
 		)

@@ -5,7 +5,7 @@
 
 	& > .impress-wrap{
 			position: relative;
-			color: white;
+			color: #f0f0f0;
 			padding: 29px 0px 22px 24px;
 			background: #0e0603;
 
@@ -53,13 +53,19 @@
 	}
 
 	& > .link-comments{
-			color: white;
+			color: #f0f0f0;
 			font-family: 'eliana';
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
 			background: #0f0603;
 			cursor: pointer;
+	}
+
+	& > .link-comments:hover{
+			color: white;
+			text-shadow: -1px 0px 3px white;
+			transition: 0.5s;
 	}
 
 	& > .link-comments:last-child span{
