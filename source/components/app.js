@@ -5,6 +5,7 @@ import Footer from "./footer";
 import Poster from "./poster";
 import Gallery from "./gallery";
 import Impression from "./impression";
+import News from "./news";
 import "../../assets/styles/app.scss";
 
 
@@ -22,6 +23,7 @@ export default class App extends React.Component{
 				<Poster></Poster>
 				<Gallery></Gallery>
 				<Impression></Impression>
+				<News></News>
 				<Footer></Footer>
 			</React.Fragment>
 		)

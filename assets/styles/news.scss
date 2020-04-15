@@ -1,0 +1,24 @@
+.news-item-wrap{
+	position: relative;
+
+	& > .news-items-unit{
+			position: relative;
+
+		& > .news-items-block{
+				position: relative;
+
+			& > .news-items-shell{
+					position: relative;
+
+				& > .img-news-item{
+						position: relative;
+				}
+
+				& > .text-news-item{
+						position: relative;
+				}
+			}
+		}
+
+	}
+}
