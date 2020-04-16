@@ -150,6 +150,7 @@
 		width: 100%;
 		margin: 1px 0px 0px 0px;
 		position: relative;
+		height: 110px;
 
 		& > .btn-arrow-left{
 				position: absolute;
@@ -158,23 +159,23 @@
 				width: 34px;
 				height: 100%;
 				z-index: 9;
-				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 62.53%);
+				background: #2d1f1566;
 
 			& > .slider-left{
 					color: #8e7b75;
-					padding: 27px 0px 0px 5px;
+					padding: 28px 0px 0px 5px;
 					font-size: xx-large;
 				}
 		}
 
 		& > .btn-arrow-right{
-					position: absolute;
-					right: 0;
-					cursor: pointer;
-					width: 34px;
-					height: 100%;
-					z-index: 9;
-					background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 62.53%);
+				position: absolute;
+				right: 0;
+				cursor: pointer;
+				width: 34px;
+				height: 100%;
+				z-index: 9;
+				background: #2d1f15;
 
 			& > .slider-right{
 					color: #8e7b75;
@@ -184,23 +185,32 @@
 		}
 
 		& > .slider-list{
-				width: 100%;
 				float: left;
+				left: 34px;
+				width: auto;
+				box-sizing: border-box;
+				right: 34px;
+				position: absolute;
 				white-space: nowrap;
 				overflow: hidden;
 				display: block;
+				background: #28190f;
+				border: 1px solid #28190f;
+
 
 			& > .slider-item{
 					width: 105px;
 					height: 100px;
 					position: relative;
-					margin: 1px 4px 0px 0px;
+					margin: 4px;
 					display: inline-block;
 					background-size: cover;
 					background-position: center;
-					outline: 1px solid white;
+					vertical-align: top;
 					cursor: pointer;
 					opacity: 0.86;
+					box-sizing: border-box;
+					border: 2px solid #2d1f15;
 			}
 
 			& > .slider-item:hover{

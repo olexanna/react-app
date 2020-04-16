@@ -1,28 +1,28 @@
 .wrap-social-poster{
 	background: black;
-
-& >	.block-social-title{
+}
+	.block-social-title{
 		color: white;
 		text-align: center;
 		padding: 38px 0px 42px 0px;
 
 		& > .large-social-title{
-				font-size: 55px;
-				color: white;
-				font-family: 'menu-coffee';
-				letter-spacing: 1px;
+			font-size: 55px;
+			color: white;
+			font-family: 'menu-coffee';
+			letter-spacing: 1px;
 		}
 
 		& > .small-social-title{
-				font-size: 19px;
-				color: white;
-				font-family: 'sha';
-				letter-spacing: 1px;
+			font-size: 19px;
+			color: white;
+			font-family: 'sha';
+			letter-spacing: 1px;
 		}
 
 	}
 
-& >.social-poster{
+ .social-poster{
 		position: relative;
 		width: 100%;
 		background: #0e0603;
@@ -67,6 +67,6 @@
 		padding: 18px 27px 20px 30px !important;
 	}
 
-}
+
 
 //#482b10;

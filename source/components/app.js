@@ -23,7 +23,6 @@ export default class App extends React.Component{
 				<Poster></Poster>
 				<Gallery></Gallery>
 				<Impression></Impression>
-				<News></News>
 				<Footer></Footer>
 			</React.Fragment>
 		)

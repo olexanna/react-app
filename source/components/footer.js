@@ -35,18 +35,22 @@ export default class Footer extends React.Component{
 			<SocialItem key={ value.icon } name={ value.name } icon={ value.icon }></SocialItem>
 		);
 
-		return<footer className={"footer"}>
-						<p className={"footer-info-shell"}>
-							{ menuItems }
+		return(
+			<footer className={"footer"}>
+				<div className={"footer-bg"}> </div>
+
+					<p className={"footer-info-shell"}>
+						{ menuItems }
+					</p>
+
+					<div className={"footer-social-block"}>
+						<p className={"footer-social-title"}>We are in social networks</p>
+
+						<p className={"footer-social-shell"}>
+							{ socialItems }
 						</p>
-
-						<div className={"footer-social-block"}>
-							<p className={"footer-social-title"}>We are in social networks</p>
-
-							<p className={"footer-social-shell"}>
-								{ socialItems }
-							</p>
-						</div>
-				</footer>
+				</div>
+			</footer>
+		)
 	}
 }

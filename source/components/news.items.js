@@ -11,10 +11,12 @@ export default class NewsItems  extends React.Component {
 	render(){
 
 		return(
-			<p className={"news-item-shell"}>
-				<span className={"img-news-item"}><img src={ "../../assets/images/poster/" + this.props.icon } alt={ "" } /></span>
-				<span className={"text-news-item"}>{ this.props.title }</span>
+			<p className={"news-items-shell"}>
+				<span className={"title-news-items"}>{ this.props.title }</span>
+				<span className={"img-news-items"}><img src={ "../../assets/images/news/" + this.props.icon } alt={ "" } /></span>
+				<span className={"text-news-items"}>{ this.props.text }</span>
 			</p>
 		)
+
 	}
 }
