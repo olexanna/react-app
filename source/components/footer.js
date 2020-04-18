@@ -23,14 +23,12 @@ export default class Footer extends React.Component{
 		);
 
 		let socialItems =  [
-			{ name: "", icon: "1.png" },
-			{ name: "", icon: "2.png" },
-			{ name: "", icon: "3.png" },
-			{ name: "", icon: "4.png" },
-			{ name: "", icon: "5.png" },
-			{ name: "", icon: "6.png" },
-			{ name: "", icon: "7.png" },
-			{ name: "", icon: "8.png" }
+			{ name: "", icon: "inst-2-1.png" },
+			{ name: "", icon: "face-2-1.png" },
+			{ name: "", icon: "tele-4-2-1-1.png" },
+			{ name: "", icon: "tw-7-1-1.png" },
+			{ name: "", icon: "w-3-1-1.png" },
+			{ name: "", icon: "vk1-1.png" }
 		].map(  (value) =>
 			<SocialItem key={ value.icon } name={ value.name } icon={ value.icon }></SocialItem>
 		);
