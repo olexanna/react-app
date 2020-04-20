@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/styles/footer.scss"
-import MenuItem from "./menu.item";
+import FooterMenuItem from "./footer.menu.item";
 import SocialItem from "./social.item";
 
 
@@ -19,7 +19,7 @@ export default class Footer extends React.Component{
 			"Vacancies",
 			"Sponsors"
 		].map(  (value) =>
-			<MenuItem key={ value } name={ value }></MenuItem>
+			<FooterMenuItem key={ value } name={ value }></FooterMenuItem>
 		);
 
 		let socialItems =  [

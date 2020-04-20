@@ -1,5 +1,5 @@
 .footer{
-	width: 102%;
+	width: 100%;
 	height: 138px;
 	background:#1b1009/*#1f130b*/;
 	border-top-right-radius: 50% 58%;
@@ -33,11 +33,14 @@
 				padding-right: 20px;
 				color: #e6e3dd;
 		}
+
+		& > .footer-menu-item:hover{
+			color: #f9f9f9;
+			text-shadow: 0px 0px 20px #c5c5c5;
+		}
+
 	}
 
-	& > .menu-item{
-
-	}
 
 	& > .footer-social-block{
 

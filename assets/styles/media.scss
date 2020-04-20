@@ -1,0 +1,37 @@
+@media  screen and (max-width : 1170px) and(max-width:1024px){
+
+	.header > .menu {
+		width: 46%;
+	}
+
+	.social-poster > .poster-block{
+		width: 99%;
+	}
+}
+
+@media screen and (max-width:900px){
+
+	.header > .menu{
+		width: 320px;
+		justify-content: flex-start;
+		display: flex;
+		flex-direction: column;
+		font-family: 'menu-coffee';
+		background: #151515;
+		position: fixed;
+		left: 0;
+		height: 100%;
+		z-index: 0;
+		padding: 87px 0px 0px 0px;
+	}
+
+	.header > .menu > span {
+		color: #e6e6e6;
+		font-size: 18px;
+		letter-spacing: 1.5px;
+		cursor: pointer;
+		padding: 17px 0px 13px 0px;
+		border-top: 1px solid #3a3a3a;
+		text-align: center;
+	}
+}

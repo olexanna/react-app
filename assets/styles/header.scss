@@ -1,8 +1,7 @@
 .header {
-	width: 102%;
-	left: -1%;
-	height: 128px;
 	position: relative;
+	width: 100%;
+	height: 128px;
 	background: #0e0603;
 	border-bottom-right-radius: 50% 58%;
 	border-bottom-left-radius: 50% 58%;
@@ -11,16 +10,37 @@
 	align-items: center;
 	z-index: 2;
 
-	&-bg{
-		width: 102%;
-		height: 138px;
-		background: #0e0603c7;
-		border-bottom-right-radius: 50% 58%;
-		border-bottom-left-radius: 50% 58%;
-		position: absolute;
-		z-index: -1;
+	&>.header-bg{
+			width: 100%;
+			height: 138px;
+			background: #0e0603c7;
+			border-bottom-right-radius: 50% 58%;
+			border-bottom-left-radius: 50% 58%;
+			position: absolute;
+			z-index: -1;
 	}
 
+	& > .btn-menu-header{
+			position: fixed;
+			left: 4px;
+			top: 9px;
+			width: 45px;
+			height: 45px;
+			background-color: #000000;
+			background-image: url(/assets/images/header/btn-menu.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			box-sizing: border-box;
+			cursor: pointer;
+			border: 2px solid #3b3b3b;
+			border-radius: 6px;
+			z-index: 1;
+	}
+
+	& > .btn-menu-header:hover{
+			box-shadow: 1px 1px 8px 0px white;
+			transition: 0.2s;
+	}
 }
 
 .title-company {
@@ -54,6 +74,11 @@
 	font-size: 18px;
 	letter-spacing: 1.5px;
 	cursor: pointer;
+}
+
+.header > .menu > span:hover{
+	color: #f9f9f9;
+	text-shadow: 0px 0px 20px #c5c5c5;
 }
 
 .header > .name-company{

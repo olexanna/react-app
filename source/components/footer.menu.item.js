@@ -1,7 +1,7 @@
 import React from "react";
 //import "../../assets/styles/app.scss";
 
-export default class MenuItem extends React.Component{
+export default class FooterMenuItem extends React.Component{
 
 	constructor( props ){
 		super( props );
@@ -9,7 +9,7 @@ export default class MenuItem extends React.Component{
 
 	render(){
 		return(
-			<span className={ "menu-item" }>{ this.props.name }</span>
+			<span className={ "footer-menu-item" }>{ this.props.name }</span>
 		)
 	}
 }

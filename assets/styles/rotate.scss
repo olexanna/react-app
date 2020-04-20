@@ -20,8 +20,7 @@
 }
 
 .ground-promotion{
-	top: 40%!important;
-	bottom: 50%!important;
+	top: 29% !important;
 	z-index: 3!important;
 	background:none!important;
 	padding: unset!important;
@@ -41,6 +40,7 @@
 				font-size: 58px;
 				color: #f9f9f7;
 				font-family: 'market-serif';
+				padding: 0px 0px 23px 0px;
 		}
 
 		& > .description-promotions{
@@ -48,6 +48,7 @@
 				font-size: 25px;
 				letter-spacing: 1px;
 				font-family: 'sha';
+				padding: 0px 0px 15px 0px;
 		}
 
 		& > .btn-deploy-info{

@@ -7,6 +7,7 @@ import Gallery from "./gallery";
 import Impression from "./impression";
 import News from "./news";
 import "../../assets/styles/app.scss";
+import "../../assets/styles/media.scss";
 
 
 export default class App extends React.Component{
