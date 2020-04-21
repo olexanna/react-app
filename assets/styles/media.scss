@@ -11,8 +11,8 @@
 
 @media screen and (max-width:900px){
 
-	.header > .menu{
-		width: 320px;
+	.header > .menu-header{
+		width: 0px;
 		justify-content: flex-start;
 		display: flex;
 		flex-direction: column;
@@ -25,7 +25,7 @@
 		padding: 87px 0px 0px 0px;
 	}
 
-	.header > .menu > span {
+	.header > .menu-header > span {
 		color: #e6e6e6;
 		font-size: 18px;
 		letter-spacing: 1.5px;
