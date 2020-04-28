@@ -11,6 +11,9 @@ export default class Header extends React.Component{
 
 		this.btnMenu = React.createRef();
 		this.menuHeader = React.createRef();
+		this.itemMenu =  React.createRef();
+
+		this.hideHeader = false;
 		this.point = false;
 	}
 
@@ -18,16 +21,32 @@ export default class Header extends React.Component{
 
 		if( this.point ){
 			console.log(111);
-			this.menuHeader.current.style.width = "auto";
+			this.menuHeader.current.classList.remove("show-menu");
+			this.menuHeader.current.classList.add("hide-menu");
+			this.itemMenu.current.style.display="none";
 			this.point = false;
 		}else{
 			console.log(222);
-			this.menuHeader.current.style.width ="320px";
+			this.menuHeader.current.classList.remove("hide-menu");
+			this.menuHeader.current.classList.add("show-menu");
+			this.itemMenu.current.style.display="flex";
+			this.itemMenu.current.classList.add("fd-column");
+
 			this.point = true;
 		}
 
 	}
 
+	hidePointHeader(){
+		if(window.innerWidth < 900 ){
+			console.log(777);
+			this.itemMenu.current.style.display="none";
+		}else{
+			console.log(2020);
+			this.itemMenu.current.style.display="flex";
+		}
+
+	}
 
 	onresize(){
 
@@ -37,28 +56,36 @@ export default class Header extends React.Component{
 		}else{
 			console.log( 444 );
 			this.btnMenu.current.style.display="none";
-			//this.btnMenu.current.removeEventListener( "click",  this.swipe.bind(this) );
 		}
 
+		if( window.innerWidth > 900  ){
+			this.menuHeader.current.classList.remove("hide-menu");
+			this.menuHeader.current.classList.remove("show-menu");
+		}
+
+		if( window.innerWidth < 900){
+			this.hidePointHeader();
+			this.itemMenu.current.classList.remove("fd-column");
+		}
+
+		if( window.innerWidth > 900){
+			this.hidePointHeader();
+		}
 	};
+
+
 
 	componentDidMount(){
 
-		window.addEventListener( "resize", () => this.onresize() );
-
+		window.addEventListener( "resize", () => this.onresize());
 		this.onresize();
-
+		this.hidePointHeader();
 		this.btnMenu.current.addEventListener( "click", () => {
 
-			if( window.innerWidth < 900 )
+			if( window.innerWidth < 900 ){
 				this.swipe();
-
+			}
 		});
-
-
-	}
-	componentWillUnmount(){
-		//window.removeEventListener( "resize", this.onresize );
 	}
 
 
@@ -75,15 +102,15 @@ export default class Header extends React.Component{
 
 	 	 let	MenuItems = function(props){
 
-			 const menu = props.menuHeader.map((menuHeaderItems) =>
-					 <span className={"menu-header-items"} key={menuHeaderItems.name} >
+			 const menu = props.pointsHeader.map((menuHeaderItems) =>
+					 <span className={"menu-header-items"}>
 						{menuHeaderItems.name}
 					 </span>
 			 );
 
 	 	 	return(
 				<React.Fragment>
-					{menu}
+						{menu}
 				</React.Fragment>
 			)
 
@@ -96,9 +123,12 @@ export default class Header extends React.Component{
 					<div className={"btn-menu-header"} key={"btn-menu"} ref={ this.btnMenu }></div>
 
 					<p className={"title-company"}>Coffee Cafe</p>
-					<p className={"menu-header"}  key={"menu-header"} ref={ this.menuHeader }>
-						<MenuItems menuHeader={menuHeaderItems} key={"menu-items"}></MenuItems>
-					</p>
+
+					<div className={"menu-header"}  key={"menu-header"} ref={ this.menuHeader }>
+						<p ref={this.itemMenu} className={"block-menu-header"}>
+							<MenuItems pointsHeader={menuHeaderItems} key={"menu-items"}  stateChange={true}   ></MenuItems>
+						</p>
+					</div>
 				</header>
 		)
 	}

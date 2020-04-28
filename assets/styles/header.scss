@@ -1,5 +1,5 @@
 .header {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	height: 128px;
 	background: #0e0603;
@@ -42,6 +42,17 @@
 			box-shadow: 1px 1px 8px 0px white;
 			transition: 0.2s;
 	}
+
+	& > .show-menu{
+			width: 320px!important;
+			transition: 0.3s;
+	}
+
+	& > .hide-menu{
+			width: 0!important;
+			transition: 0.3s;
+	}
+
 }
 
 .title-company {
@@ -70,14 +81,28 @@
 	font-family: 'menu-coffee';
 }
 
-.header > .menu-header > .menu-header-items{
+.header > .menu-header > .block-menu-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header > .menu-header > .block-menu-header >  .menu-header-items{
 	color: #e6e6e6;
 	font-size: 18px;
 	letter-spacing: 1.5px;
 	cursor: pointer;
 }
 
-.header > .menu-header > .menu-header-items:hover{
+ .show-menu-item{
+	display: block;
+}
+
+.hide-menu-item{
+	display: none;
+}
+
+.header > .menu-header > .block-menu-header > .menu-header-items:hover{
 	color: #f9f9f9;
 	text-shadow: 0px 0px 20px #c5c5c5;
 }
