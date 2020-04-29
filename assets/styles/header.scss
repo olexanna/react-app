@@ -94,6 +94,17 @@
 	cursor: pointer;
 }
 
+.bar-block-menu-header{
+	padding: 170px 0px 0px 0px;
+	display: flex!important;
+	flex-direction: column;
+}
+
+.hide-menu-header-items{
+	display: none!important;
+}
+
+
  .show-menu-item{
 	display: block;
 }
@@ -101,6 +112,8 @@
 .hide-menu-item{
 	display: none;
 }
+
+
 
 .header > .menu-header > .block-menu-header > .menu-header-items:hover{
 	color: #f9f9f9;
