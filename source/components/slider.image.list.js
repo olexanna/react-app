@@ -220,7 +220,7 @@ export default class SliderImageList extends React.Component {
 
 					<p key={ "image-list" } className={ "slider-list" } ref={ this.imageList }>
 						{ this.list.map( (value, key) =>
-							<span key={ value.preview } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url(../assets/images/" + value.preview + ")" }}></span>
+							<span key={ value.source } className={ "slider-item" } onClick={ this.click.bind( this, key ) } style={{ backgroundImage: "url(../assets/images/" + value.preview + ")" }}></span>
 						) }
 					</p>
 

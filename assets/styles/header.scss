@@ -53,6 +53,16 @@
 			transition: 0.3s;
 	}
 
+	& > .mobile-backdrop{
+			left: 0px;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			position: fixed;
+			background-color: rgba(0, 0, 0, 0.74);
+			display: none;
+	}
+
 }
 
 .title-company {
@@ -106,11 +116,11 @@
 
 
  .show-menu-item{
-	display: block;
+	display: flex!important;
 }
 
 .hide-menu-item{
-	display: none;
+	display: none!important;
 }
 
 
@@ -131,3 +141,4 @@
 	margin-right: 250px;
 	background-size: contain;
 }
+

@@ -12,94 +12,147 @@ export default class Header extends React.Component{
 		this.btnMenu = React.createRef();
 		this.menuHeader = React.createRef();
 		this.itemMenu =  React.createRef();
+		this.backgroundMobile = React.createRef();
 
 		this.point = false;
 	}
 
 	mobileBackdrop(){
-		if(window.innerWidth < 900){
-			this.mainContainer = document.getElementById("main");
-			this.backMobile = document.createElement("div");
-			this.backMobile.className = "backdrop-mobile";
-			this.mainContainer.appendChild(this.backMobile);
-		}
+
+		if( this.backMobile )
+			return;
+
+		this.backMobile = document.createElement("div");
+		this.backMobile.className = "backdrop-mobile";
+		this.mainContainer.appendChild(this.backMobile);
+
 	}
 
 	removeMobileBackdrop(){
-		if( window.innerWidth > 900 ){
-			this.mainContainer = document.getElementById("main");
-			this.backMob =  document.getElementsByClassName("backdrop-mobile")[0];
-			this.mainContainer.removeChild(	this.backMob);
-			console.log(	this.backMob, 555);
-		}
+
+		if( !this.backMobile )
+			return;
+
+		this.backMobile.remove();
+		this.backMobile = null;
+
 	}
 
-	toggleMobileBackdrop(){
-		if( window.innerWidth > 900){
-			this.mobileBackdrop();
-		}
-	}
+	hideItemsMobile (){
+		if( !this.itemMenu )
+			return;
+
+		this.itemMenu.current.classList.add("hide-menu-header-items");
+	};
+
+
+	removeHideItemsMobile (){
+		if( !this.itemMenu )
+			return;
+
+		this.itemMenu.current.classList.remove("hide-menu-header-items");
+	};
+
+
+	titleMobileMenu(){
+		console.log(this.captionMobile);
+
+		if( this.captionMobile )
+			  return;
+		 this.captionMobile =document.createElement("div");
+
+		this.captionMobile.className = "title-mobile";
+
+		this.mainContainer.appendChild(this.captionMobile);
+	};
+
+	removeTitleMobileMenu(){
+		console.log(87978978);
+
+		if( !this.captionMobile )
+			return;
+		this.captionMobile.remove();
+		this.captionMobile = null;
+		//if( !this.captionMobile )
+		//	return;
+	};
+
 
 	swipe(){
 		if( this.point ){
-			console.log(111);
+			this.removeHideItemsMobile();
+
 			this.menuHeader.current.classList.remove("show-menu");
 			this.menuHeader.current.classList.add("hide-menu");
 
 			this.itemMenu.current.classList.remove("bar-block-menu-header");
-			this.itemMenu.current.classList.add("hide-menu-header-items");
+
+			this.itemMenu.current.classList.remove("show-menu-item");
+			this.itemMenu.current.classList.add("hide-menu-item");
+
+			this.backgroundMobile.current.style.display = "none";
 			this.point = false;
 		}else{
-			console.log(222);
 			this.menuHeader.current.classList.remove("hide-menu");
 			this.menuHeader.current.classList.add("show-menu");
 
-			this.itemMenu.current.classList.remove("hide-menu-header-items");
+			this.itemMenu.current.classList.remove("hide-menu-item");
+			this.itemMenu.current.classList.add("show-menu-item");
+
 			this.itemMenu.current.classList.add("bar-block-menu-header");
 
+			this.backgroundMobile.current.style.display = "block";
 			this.point = true;
-		}
+		};
+
 	}
 
-	zeroingClassesHeaderMobile (){
-		if(window.innerWidth > 900 ){
-			console.log(2020);
+	removeClassesHeaderMobile (){
+
+		if( window.innerWidth > 900 ){
 			this.menuHeader.current.classList.remove("hide-menu");
 			this.menuHeader.current.classList.remove("show-menu");
 
-			this.itemMenu.current.classList.remove("hide-menu-header-items");
 			this.itemMenu.current.classList.remove("bar-block-menu-header");
+			this.itemMenu.current.classList.remove("show-menu-item");
+			this.itemMenu.current.classList.remove("hide-menu-item");
+
+			this.backgroundMobile.current.style.display = "none";
 			this.itemMenu.current.style.display="flex";
 		}
 	}
 
 	onresize(){
+		console.log("resize");
+
 		if( window.innerWidth < 900 ){
-			console.log( 333 );
 			this.btnMenu.current.style.display="block";
-			this.itemMenu.current.classList.add("hide-menu-header-items");
+			this.hideItemsMobile();
+			this.titleMobileMenu();
 		}else{
-			console.log( 444 );
 			this.btnMenu.current.style.display="none";
+			this.removeHideItemsMobile();
+			this.removeTitleMobileMenu();
 		}
-		this.zeroingClassesHeaderMobile();
+		this.removeClassesHeaderMobile();
 	};
 
 	componentDidMount(){
 
+		this.mainContainer = document.getElementsByClassName("menu-header")[0];
+		console.log(this.mainContainer);
+
 		window.addEventListener( "resize", () => this.onresize());
-		window.addEventListener("onload",()=>this.toggleMobileBackdrop());
+
 		this.onresize();
-		this.toggleMobileBackdrop();
-		//this.mobileBackdrop();
-		//this.removeMobileBackdrop();
 
 		this.btnMenu.current.addEventListener( "click", () => {
 			if( window.innerWidth < 900 ){
 				this.swipe();
 			}
 		});
-	}
+
+	};
 
 
 	render(){
@@ -115,11 +168,11 @@ export default class Header extends React.Component{
 
 	 	 let	MenuItems = function(props){
 
-			 const menu = props.pointsHeader.map((menuHeaderItems) =>
-					 <span className={"menu-header-items"}>
-						{menuHeaderItems.name}
-					 </span>
-			 );
+			const menu = props.pointsHeader.map((menuHeaderItems) =>
+				<span className={"menu-header-items"} key={ menuHeaderItems.name }>
+					{menuHeaderItems.name}
+				</span>
+			);
 
 	 	 	return(
 				<React.Fragment>
@@ -130,19 +183,20 @@ export default class Header extends React.Component{
 		};
 
 		return(
-				<header className={"header"}>
-					<div className={"header-bg"}></div>
+			<header className={"header"}>
+				<div className={"header-bg"}></div>
 
-					<div className={"btn-menu-header"} key={"btn-menu"} ref={ this.btnMenu }></div>
+				<div className={"btn-menu-header"} key={"btn-menu"} ref={ this.btnMenu }></div>
+				<div className={ "mobile-backdrop" } ref={ this.backgroundMobile}></div>
 
-					<p className={"title-company"}>Coffee Cafe</p>
+				<p className={"title-company"}>Coffee Cafe</p>
 
-					<div className={"menu-header"}  key={"menu-header"} ref={ this.menuHeader }>
-						<p ref={this.itemMenu} className={"block-menu-header"}>
-							<MenuItems pointsHeader={menuHeaderItems} key={"menu-items"}  stateChange={true}   ></MenuItems>
-						</p>
-					</div>
-				</header>
+				<div className={"menu-header"}  key={"menu-header"} ref={ this.menuHeader }>
+					<p ref={this.itemMenu} className={"block-menu-header"}>
+						<MenuItems pointsHeader={menuHeaderItems}></MenuItems>
+					</p>
+				</div>
+			</header>
 		)
 	}
 }
