@@ -59,11 +59,15 @@ export default class Header extends React.Component{
 
 		if( this.captionMobile )
 			  return;
-		 this.captionMobile =document.createElement("div");
 
+		this.captionMobile = document.createElement("div");
 		this.captionMobile.className = "title-mobile";
 
-		this.mainContainer.appendChild(this.captionMobile);
+		this.nameCompany = document.createElement("p");
+		this.nameCompany.className = "logo-company";
+		this.captionMobile.appendChild( this.nameCompany );
+
+		this.mainContainer.appendChild( this.captionMobile );
 	};
 
 	removeTitleMobileMenu(){
@@ -71,19 +75,17 @@ export default class Header extends React.Component{
 
 		if( !this.captionMobile )
 			return;
+
 		this.captionMobile.remove();
 		this.captionMobile = null;
-		//if( !this.captionMobile )
-		//	return;
 	};
 
 
 	swipe(){
 		if( this.point ){
 			this.removeHideItemsMobile();
-
-			this.menuHeader.current.classList.remove("show-menu");
 			this.menuHeader.current.classList.add("hide-menu");
+			this.menuHeader.current.classList.remove("show-menu");
 
 			this.itemMenu.current.classList.remove("bar-block-menu-header");
 
@@ -91,8 +93,12 @@ export default class Header extends React.Component{
 			this.itemMenu.current.classList.add("hide-menu-item");
 
 			this.backgroundMobile.current.style.display = "none";
+			this.removeTitleMobileMenu();
+
 			this.point = false;
 		}else{
+			this.removeHideItemsMobile();
+
 			this.menuHeader.current.classList.remove("hide-menu");
 			this.menuHeader.current.classList.add("show-menu");
 
@@ -102,6 +108,8 @@ export default class Header extends React.Component{
 			this.itemMenu.current.classList.add("bar-block-menu-header");
 
 			this.backgroundMobile.current.style.display = "block";
+			this.titleMobileMenu();
+
 			this.point = true;
 		};
 
@@ -110,6 +118,7 @@ export default class Header extends React.Component{
 	removeClassesHeaderMobile (){
 
 		if( window.innerWidth > 900 ){
+
 			this.menuHeader.current.classList.remove("hide-menu");
 			this.menuHeader.current.classList.remove("show-menu");
 
@@ -123,18 +132,17 @@ export default class Header extends React.Component{
 	}
 
 	onresize(){
-		console.log("resize");
 
 		if( window.innerWidth < 900 ){
+
 			this.btnMenu.current.style.display="block";
 			this.hideItemsMobile();
-			this.titleMobileMenu();
 		}else{
 			this.btnMenu.current.style.display="none";
 			this.removeHideItemsMobile();
 			this.removeTitleMobileMenu();
+			this.removeClassesHeaderMobile();
 		}
-		this.removeClassesHeaderMobile();
 	};
 
 	componentDidMount(){
