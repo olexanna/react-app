@@ -6,11 +6,12 @@
 	& > .impress-wrap{
 			position: relative;
 			color: #f0f0f0;
-			padding: 29px 0px 22px 24px;
+			padding: 29px 0px 22px 0px;
 			background: #0e0603;
 
 		& > .impress-block{
 				width: 74%;
+				padding: 0px 0px 0px 17px;
 
 			& > .ava-impress{
 					width: 120px;
@@ -31,7 +32,7 @@
 			}
 
 			& > .comment-impress{
-					padding: 20px 0px 0px 31px;
+					padding: 20px 6px 0px 12px;
 					width: 78%;
 
 				& > span.text-comment-impress{

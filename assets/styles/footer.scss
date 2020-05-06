@@ -4,7 +4,7 @@
 	background:#1b1009/*#1f130b*/;
 	border-top-right-radius: 50% 58%;
 	border-top-left-radius: 50% 58%;
-	position: absolute;
+	position: relative;
 	padding: 0px 0px 19px 0px;
 
 	& > .footer-bg{
@@ -32,6 +32,7 @@
 		& > span{
 				padding-right: 20px;
 				color: #e6e3dd;
+				cursor: pointer;
 		}
 
 		& > .footer-menu-item:hover{

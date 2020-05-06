@@ -117,7 +117,7 @@ export default class Header extends React.Component{
 
 	removeClassesHeaderMobile (){
 
-		if( window.innerWidth > 900 ){
+		if( window.innerWidth > 917 ){
 
 			this.menuHeader.current.classList.remove("hide-menu");
 			this.menuHeader.current.classList.remove("show-menu");
@@ -133,7 +133,7 @@ export default class Header extends React.Component{
 
 	onresize(){
 
-		if( window.innerWidth < 900 ){
+		if( window.innerWidth < 917 ){
 
 			this.btnMenu.current.style.display="block";
 			this.hideItemsMobile();
@@ -155,7 +155,7 @@ export default class Header extends React.Component{
 		this.onresize();
 
 		this.btnMenu.current.addEventListener( "click", () => {
-			if( window.innerWidth < 900 ){
+			if( window.innerWidth < 917 ){
 				this.swipe();
 			}
 		});

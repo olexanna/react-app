@@ -7,7 +7,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot --host 0.0.0.0",
     "build": "webpack --mode production"
   },
   "repository": {
