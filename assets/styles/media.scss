@@ -1,9 +1,10 @@
 @media  screen and ( max-width : 1170px ) {
 
-	.header > .menu {
-		width: 46%!important;
+	.header > .menu-header {
+		width: 46%;
 	}
 }
+
 
 @media screen and ( max-width:917px ){
 
@@ -29,6 +30,10 @@
 		padding: 21px 0px 19px 0px;
 		border-top: 1px solid #202020;
 		text-align: center;
+	}
+
+	.ground-promotion > .block-promotions{
+		padding: 0px 0px 0px 0px;
 	}
 
 	.social-poster > .poster-block{
@@ -64,6 +69,7 @@
 	}
 }
 
+
 @media screen and ( max-width:750px ){
 
 	.impress-primary > .impress-wrap {
@@ -79,26 +85,27 @@
 	}
 }
 
+
 @media screen and ( max-width:736px ){
+
+	.header{
+		height: 108px;
+	}
+
+	.header > .header-bg {
+		height: 122px;
+	}
+
+	.mobile-slider-height{
+
+	}
 
 	.slider-display {
 		height: 317px!important;
 	}
 
-	.slider-image {
-		background-position: -261px 0px!important;
-	}
-
-}
-
-@media screen and ( max-width:370px ){
-
-	.slider-display {
-		height: 254px!important;
-	}
-
-	.slider-image {
-		background-position: -261px 0px!important;
+	.mobile-position-gallery {
+	   background-position: -261px 0px!important;
 	}
 
 	.slider-prev, .slider-next {
@@ -113,6 +120,10 @@
 		letter-spacing: -3px!important;
 	}
 
+	.backdrop-title-image{
+		font-size: 12px;
+	}
+
 	.carousel {
 		height: 98px!important;
 	}
@@ -122,5 +133,56 @@
 		height: 88px!important;
 	}
 
+	.impress-primary{
+		padding: 35px 0px 25px 0px;
+	}
+}
 
+
+@media screen and ( max-width:570px ){
+
+	.slider-display {
+		height: 258px!important;
+	}
+
+
+	.slider-prev, .slider-next {
+		width: 51px!important;
+	}
+
+	.arrow-left, .arrow-right {
+		width: 30px!important;
+		height: 30px!important;
+		left: 11px!important;
+		font-size: 25px!important;
+		letter-spacing: -3px!important;
+	}
+
+	.backdrop-title-image{
+		font-size: 12px;
+	}
+
+	.carousel {
+		height: 98px!important;
+	}
+
+	.carousel > .slider-list > .slider-item {
+		width: 90px!important;
+		height: 88px!important;
+	}
+
+	.impress-primary{
+		padding: 35px 0px 25px 0px;
+	}
+}
+
+
+@media screen and ( max-width:320px ){
+	.title-company {
+		padding: 11px 0px 10px 40px;
+	}
+
+	.title-company {
+		font-size: 38px;
+	}
 }

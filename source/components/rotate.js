@@ -31,14 +31,15 @@ export default class Rotate extends React.Component {
 		super( props );
 	}
 
+
 	componentDidMount(){
-	};
+	}
 
 	render(){
 		return(
 			<article className={"gallery rotate"}>
 				<div className={"blackout"}></div>
-				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList } hideCarousel={true} rotateHeight={true}></SliderImageList>
+				<SliderImageList rotation={ 5000 } hideui={ true } textcenter={ true } list={ BannerList } hideCarousel={true} rotateHeight={true} mobileHeight={true}></SliderImageList>
 			</article>
 		)
 	}

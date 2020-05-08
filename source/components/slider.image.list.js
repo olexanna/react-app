@@ -1,6 +1,5 @@
 import React from "react";
-import "../../assets/styles/gallery.scss"
-
+import "../../assets/styles/gallery.scss";
 
 
 export default class SliderImageList extends React.Component {
@@ -145,6 +144,28 @@ export default class SliderImageList extends React.Component {
 		this.click( this.display + 1 );
 	};
 
+	resizeMobileRotate(){
+		console.log(34566);
+		if( window.innerWidth < 737 &&  this.props.mobileHeight) {
+			this.sliderDisplay.current.classList.remove( "slider-height" );
+			this.sliderDisplay.current.classList.add( "mobile-slider-height" );
+		}else{
+			this.sliderDisplay.current.classList.remove( "mobile-slider-height" );
+			this.sliderDisplay.current.classList.add( "slider-height" );
+		}
+	};
+
+	addSliderPosition(){
+
+		if( window.innerWidth <  737 ){
+
+			if(this.props.imagePosition){
+				this.image1.current.classList.add( "mobile-position-gallery" );
+				this.image2.current.classList.add( "mobile-position-gallery" );
+			}
+		}
+	}
+
 	componentDidMount(){
 
 		if( !this.imageList.current.firstElementChild )
@@ -177,6 +198,13 @@ export default class SliderImageList extends React.Component {
 		if( this.props.hideBlockPromotion ){
 			this.textBlock.blockPromotion.current.style.display = "none";
 		}
+
+
+
+		window.addEventListener( "resize", () => this.resizeMobileRotate() );
+		window.removeEventListener( "resize", () => this.resizeMobileRotate() );
+		window.addEventListener( "resize", () => this.addSliderPosition() );
+
 
 	}
 

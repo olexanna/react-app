@@ -94,6 +94,8 @@ export default class Gallery extends React.Component {
 		super( props );
 	}
 
+
+
 	render(){
 		return(
 			<article className={"gallery"}>
@@ -102,7 +104,7 @@ export default class Gallery extends React.Component {
 					<p className={"small-title-gallery"}>The gallery contains a short list of drinks coffee cafes</p>
 				</div>
 
-				<SliderImageList list={ GalleryList } hideBlockPromotion={true}></SliderImageList>
+				<SliderImageList list={ GalleryList } hideBlockPromotion={true} imagePosition={true}></SliderImageList>
 			</article>
 		)
 	}
