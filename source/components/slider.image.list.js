@@ -145,7 +145,7 @@ export default class SliderImageList extends React.Component {
 	};
 
 	resizeMobileRotate(){
-		console.log(34566);
+
 		if( window.innerWidth < 737 &&  this.props.mobileHeight) {
 			this.sliderDisplay.current.classList.remove( "slider-height" );
 			this.sliderDisplay.current.classList.add( "mobile-slider-height" );
@@ -199,13 +199,10 @@ export default class SliderImageList extends React.Component {
 			this.textBlock.blockPromotion.current.style.display = "none";
 		}
 
-
-
 		window.addEventListener( "resize", () => this.resizeMobileRotate() );
-		window.removeEventListener( "resize", () => this.resizeMobileRotate() );
+		this.resizeMobileRotate();
+		//window.removeEventListener( "resize", () => this.resizeMobileRotate() );
 		window.addEventListener( "resize", () => this.addSliderPosition() );
-
-
 	}
 
 	render(){
