@@ -197,12 +197,14 @@ export default class SliderImageList extends React.Component {
 
 		if( this.props.hideBlockPromotion ){
 			this.textBlock.blockPromotion.current.style.display = "none";
-		}
+		};
 
-		window.addEventListener( "resize", () => this.resizeMobileRotate() );
+		window.addEventListener( "resize", () => {
+			this.resizeMobileRotate();
+			this.addSliderPosition();
+		});
 		this.resizeMobileRotate();
 		//window.removeEventListener( "resize", () => this.resizeMobileRotate() );
-		window.addEventListener( "resize", () => this.addSliderPosition() );
 	}
 
 	render(){

@@ -13,6 +13,7 @@ export default class Header extends React.Component{
 		this.menuHeader = React.createRef();
 		this.itemMenu =  React.createRef();
 		this.backgroundMobile = React.createRef();
+		this.btnScrollUp = React.createRef();
 
 		this.point = false;
 	}
@@ -145,6 +146,30 @@ export default class Header extends React.Component{
 		}
 	};
 
+	//showHeightScroll(){
+	//	console.log("scroll");
+	//	let  scrollHeight = window.scrollY;
+	//	let displayHeightScroll = document.getElementsByClassName( "display-height" )[0];
+	//    displayHeightScroll.innerHTML = scrollHeight;
+	//}
+
+	showBtnScrollUp(){
+
+		if(window.scrollY >1090){
+			this.btnScrollUp.current.style.display = "block";
+		}else{
+			this.btnScrollUp.current.style.display = "none";
+		}
+	}
+
+	buttonScrollUp(){
+		let  scrollHeight = window.scrollY;
+
+		if( scrollHeight >1090 ){
+			document.documentElement.scrollTop = 0;
+		}
+	}
+
 	componentDidMount(){
 
 		this.mainContainer = document.getElementsByClassName("menu-header")[0];
@@ -159,6 +184,13 @@ export default class Header extends React.Component{
 				this.swipe();
 			}
 		});
+
+		window.addEventListener( "scroll", ()=>{
+			//this.showHeightScroll();
+			this.showBtnScrollUp();
+		});
+
+		this.btnScrollUp.current.addEventListener( "click", () =>this.buttonScrollUp() );
 
 	};
 
@@ -204,6 +236,10 @@ export default class Header extends React.Component{
 						<MenuItems pointsHeader={menuHeaderItems}></MenuItems>
 					</p>
 				</div>
+				<p className={"display-height"}></p>
+				<p className={"btn-up"}  ref={ this.btnScrollUp}>
+					<span className={"arrow-btn-up"}>&#10148;</span>
+				</p>
 			</header>
 		)
 	}
