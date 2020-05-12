@@ -165,8 +165,9 @@ export default class Header extends React.Component{
 	buttonScrollUp(){
 		let  scrollHeight = window.scrollY;
 
-		if( scrollHeight >1090 ){
+		if( scrollHeight >1090 || document.body.scrollTop > 1090 || document.documentElement.scrollTop > 1090 ){
 			document.documentElement.scrollTop = 0;
+			document.body.scrollTop = 0;
 		}
 	}
 
