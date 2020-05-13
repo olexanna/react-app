@@ -207,3 +207,37 @@
 		font-size: 37px;
 	}
 }
+
+@media only screen and (orientation: landscape) {
+
+	.header > .show-menu{
+		width: 100%!important;
+	}
+
+	.header > .menu-header {
+		overflow-x: hidden;
+		height: 100%!important;
+		bottom: 0;
+	}
+
+	.bar-block-menu-header{
+		margin: 170px 0px 0px 0px;
+		padding: unset!important;
+		overflow-y: auto;
+	}
+
+	.title-mobile {
+		position: fixed;
+		padding: 0px 0px 0px 21px;
+		width: 94%;
+	}
+
+	.title-mobile > .logo-company {
+		margin: 0 auto;
+	}
+
+	.header > .show-menu {
+		width: 100%!important;
+	}
+
+}
