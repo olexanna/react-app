@@ -157,12 +157,12 @@
 .display-height{
 	 width: 50px;
 	 height: 50px;
-	 position: fixed;
+	 position: absolute;
 	 right: 0;
 	 background: red;
 	 color: white;
 	 font-size: 20px;
-	display: none;
+	display: block;
  }
 
 .btn-up{

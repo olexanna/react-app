@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/styles/gallery.scss";
+import { Config } from "../config";
 
 
 export default class SliderImageList extends React.Component {
@@ -108,16 +109,19 @@ export default class SliderImageList extends React.Component {
 		let path1 = "";
 		let path2 = "";
 
+		let image1Source = "../assets/images/" + this.list[ key1 ].source;
 		image1.onload = ( event ) => {
-			path1 = event.path[ 0 ].src;
+			path1 = image1Source;
 			this.animation( key, path1, path2, width, position, left, direction );
 		};
-		image1.src = "../assets/images/" + this.list[ key1 ].source;
+		image1.src = image1Source;
+
+		let image2Source = "../assets/images/" + this.list[ key2 ].source;
 		image2.onload = ( event ) => {
-			path2 = event.path[ 0 ].src;
+			path2 = image2Source;
 			this.animation( key, path1, path2, width, position, left, direction );
 		};
-		image2.src = "../assets/images/" + this.list[ key2 ].source;
+		image2.src = image2Source;
 
 	};
 	rotation( time ){
@@ -146,7 +150,7 @@ export default class SliderImageList extends React.Component {
 
 	resizeMobileRotate(){
 
-		if( window.innerWidth < 737 &&  this.props.mobileHeight) {
+		if( window.innerWidth < Config.sliderSize &&  this.props.mobileHeight) {
 			this.sliderDisplay.current.classList.remove( "slider-height" );
 			this.sliderDisplay.current.classList.add( "mobile-slider-height" );
 		}else{
@@ -157,7 +161,7 @@ export default class SliderImageList extends React.Component {
 
 	addSliderPosition(){
 
-		if( window.innerWidth <  737 ){
+		if( window.innerWidth <  Config.sliderSize ){
 
 			if(this.props.imagePosition){
 				this.image1.current.classList.add( "mobile-position-gallery" );
