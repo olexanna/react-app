@@ -5,7 +5,6 @@ import Footer from "./footer";
 import Poster from "./poster";
 import Gallery from "./gallery";
 import Impression from "./impression";
-import News from "./news";
 import "../../assets/styles/app.scss";
 import "../../assets/styles/media.scss";
 

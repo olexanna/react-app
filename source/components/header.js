@@ -149,12 +149,12 @@ export default class Header extends React.Component{
 		}
 	};
 
-	showHeightScroll(){
-
-		let  scrollHeight = window.scrollY;
-		let displayHeightScroll = document.getElementsByClassName( "display-height" )[0];
-	    displayHeightScroll.innerHTML = scrollHeight;
-	}
+	//showHeightScroll(){
+//
+	//	let  scrollHeight = window.scrollY;
+	//	let displayHeightScroll = document.getElementsByClassName( "display-height" )[0];
+	//    displayHeightScroll.innerHTML = scrollHeight;
+	//}
 
 	showBtnScrollUp(){
 
@@ -177,10 +177,15 @@ export default class Header extends React.Component{
 	headerUp(){
 		if( window.scrollY >1100 ){
 			this.header.current.style.position = "absolute";
-			//this.btnMenu.current.style.position = "absolute";
+			this.btnMenu.current.style.position = "absolute";
 		} else {
 			this.header.current.style.position = "fixed";
-		//	this.btnMenu.current.style.position = "fixed";
+		}
+
+		if( window.scrollY >1100 &&  this.menuHeader.current.classList.contains("show-menu") ){
+			 this.btnMenu.current.style.position = "fixed";
+		}else{
+			this.btnMenu.current.style.position = "absolute";
 		}
 	}
 
@@ -199,7 +204,7 @@ export default class Header extends React.Component{
 		});
 
 		window.addEventListener( "scroll", ()=>{
-			this.showHeightScroll();
+			//this.showHeightScroll();
 			this.showBtnScrollUp();
 			this.headerUp();
 		});
