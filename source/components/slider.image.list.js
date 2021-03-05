@@ -92,8 +92,10 @@ export default class SliderImageList extends React.Component {
 
 		let left = 0;
 		let width = this.image1.current.clientWidth || 1640;
+
 		let direction = key > this.display ? 1 : -1;
 		let position = direction > 0 ? 0 : -width;
+
 		let key1 = direction > 0 ? this.display : key;
 		let key2 = direction > 0 ? key : this.display;
 		this.display = key;
@@ -122,11 +124,11 @@ export default class SliderImageList extends React.Component {
 			this.animation( key, path1, path2, width, position, left, direction );
 		};
 		image2.src = image2Source;
-
 	};
-	rotation( time ){
 
+	rotation( time ){
 		clearInterval( this.rotationInterval );
+
 		this.rotationInterval = setInterval(() => {
 
 			let index = this.display + 1;
@@ -135,7 +137,6 @@ export default class SliderImageList extends React.Component {
 				index = 0;
 
 			this.click( index );
-
 		}, time );
 
 	};

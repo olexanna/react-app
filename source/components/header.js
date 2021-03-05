@@ -51,7 +51,6 @@ export default class Header extends React.Component{
 	removeHideItemsMobile (){
 		if( !this.itemMenu )
 			return;
-
 		this.itemMenu.current.classList.remove("hide-menu-header-items");
 	};
 
